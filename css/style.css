@@ -1,0 +1,2072 @@
+/* ================================
+   リセット・ベース
+================================ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 10px = 1rem */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #333;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+a:focus-visible,
+.btn:focus-visible,
+.hamburger:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/* ================================
+   カラー変数
+================================ */
+:root {
+    --color-primary: #2196F3;
+    --color-primary-light: #64B5F6;
+    --color-primary-dark: #1976D2;
+    --color-accent: #42A5F5;
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-white: #fff;
+    --color-gray-light: #f5f5f5;
+    --color-gray: #e0e0e0;
+}
+
+/* ================================
+   共通クラス
+================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+/* ================================
+   ボタン
+================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    opacity: 1;
+}
+
+.btn--outline {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    border: 2px solid var(--color-gray);
+}
+
+.btn--outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+.btn__icon {
+    font-size: 1.6rem;
+}
+
+.btn i {
+    font-size: 1.4rem;
+}
+
+/* ================================
+   ヘッダー
+================================ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    height: 80px;
+}
+
+.header__logo {
+    margin-right: auto;
+}
+
+.header__logo a {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    letter-spacing: 0.05em;
+}
+
+.header__nav {
+    margin-right: 30px;
+}
+
+.header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__nav-item > a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text);
+    padding: 10px 0;
+    position: relative;
+}
+
+.header__nav-item > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.2s ease;
+}
+
+.header__nav-item > a:hover::after {
+    width: 100%;
+}
+
+.header__nav-item > a:hover {
+    opacity: 1;
+    color: var(--color-primary);
+}
+
+.header__nav-item .arrow {
+    font-size: 1rem;
+    margin-left: 4px;
+}
+
+/* ドロップダウン */
+.header__nav-item.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: top center;
+    min-width: 180px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.header__nav-item.has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    color: var(--color-text);
+}
+
+.dropdown li a:hover {
+    background-color: var(--color-gray-light);
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+/* CTA */
+.header__cta {
+    display: flex;
+    gap: 12px;
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 7px;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: all 0.2s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================================
+   ヒーロー（メインビジュアル）
+================================ */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 10;
+    width: 50%;
+    padding: 60px 60px 60px 80px;
+}
+
+.hero__subcopy {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+
+.hero__title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-text);
+    margin-bottom: 30px;
+}
+
+.hero__title-main {
+    font-size: 5.6rem;
+    font-weight: 900;
+    display: inline;
+}
+
+.hero__description {
+    font-size: 1.6rem;
+    line-height: 2;
+    color: var(--color-text-light);
+}
+
+/* ビジュアル部分 */
+.hero__visual {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 55%;
+    height: calc(100vh - 80px);
+    z-index: 5;
+}
+
+.hero__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    overflow: hidden;
+}
+
+.hero__image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.hero__image-placeholder .placeholder-icon {
+    color: #888;
+}
+
+.hero__image-placeholder span {
+    font-size: 1.4rem;
+    color: #666;
+}
+
+/* サービスバッジ */
+.hero__service-badge {
+    position: absolute;
+    bottom: 80px;
+    right: 60px;
+    text-align: right;
+    z-index: 20;
+}
+
+.hero__service-text {
+    font-size: 1.4rem;
+    color: var(--color-white);
+    margin-bottom: 8px;
+}
+
+.hero__service-name {
+    font-size: 4.8rem;
+    font-weight: 900;
+    color: var(--color-white);
+    letter-spacing: 0.1em;
+    border-bottom: 3px solid var(--color-white);
+    padding-bottom: 10px;
+}
+
+/* 斜めの帯 */
+.hero__bg-stripe {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 50%;
+    height: calc(100vh - 80px);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 50%, var(--color-primary-dark) 100%);
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+}
+
+/* モバイル用背景画像（PC時は非表示） */
+.hero__bg-image {
+    display: none;
+}
+
+/* ================================
+   クロスフェードスライダー
+================================ */
+.hero__slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero__slide.is-active {
+    opacity: 1;
+}
+
+.hero__slide .hero__image-placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+/* PC用スライダー */
+.hero__slider--pc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* スライドごとの背景色（視認用） */
+.hero__slide:nth-child(1) .hero__image-placeholder {
+    background: linear-gradient(135deg, #90CAF9 0%, #64B5F6 100%);
+}
+
+.hero__slide:nth-child(2) .hero__image-placeholder {
+    background: linear-gradient(135deg, #42A5F5 0%, #2196F3 100%);
+}
+
+.hero__slide:nth-child(3) .hero__image-placeholder {
+    background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%);
+}
+
+/* ================================
+   About（What's）セクション
+================================ */
+.about {
+    background-color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(33, 150, 243, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.about__inner {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.about__content {
+    flex: 1;
+}
+
+.about__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+    padding: 8px 16px;
+    background-color: rgba(33, 150, 243, 0.08);
+    border-radius: 4px;
+}
+
+.about__label-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+.about__title {
+    font-size: 3.6rem;
+    font-weight: 900;
+    line-height: 1.4;
+    color: var(--color-text);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.about__description {
+    font-size: 1.6rem;
+    line-height: 2;
+    color: var(--color-text-light);
+}
+
+.about__image {
+    flex: 1;
+}
+
+.about__image-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.about__image-placeholder .placeholder-icon {
+    color: #888;
+}
+
+.about__image-placeholder span {
+    font-size: 1.4rem;
+    color: #666;
+}
+
+/* ================================
+   Achievements（実績）セクション
+================================ */
+.achievements {
+    background-color: var(--color-white);
+}
+
+.achievements__title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    text-align: center;
+    color: var(--color-text);
+    margin-bottom: 60px;
+    letter-spacing: -0.02em;
+}
+
+.achievements__title-highlight {
+    color: var(--color-primary);
+    position: relative;
+}
+
+.achievements__title-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-color: rgba(33, 150, 243, 0.2);
+    z-index: -1;
+}
+
+.achievements__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.achievements__card {
+    background-color: var(--color-white);
+    padding: 48px 32px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.achievements__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(33, 150, 243, 0.12);
+}
+
+.achievements__card-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(33, 150, 243, 0.05) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.achievements__card-icon::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 2px solid rgba(33, 150, 243, 0.15);
+}
+
+.achievements__card-icon i {
+    font-size: 2.8rem;
+    color: var(--color-primary);
+}
+
+.achievements__card-label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 16px;
+}
+
+.achievements__card-text {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    text-align: left;
+}
+
+/* ================================
+   Service（サービス）セクション
+================================ */
+.service {
+    background-color: var(--color-white);
+}
+
+.service__header {
+    margin-bottom: 32px;
+}
+
+.service__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0;
+}
+
+.service__label-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+}
+
+.service__title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+.service__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.service__card {
+    background-color: var(--color-white);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.service__card:hover {
+    transform: translateY(-4px);
+}
+
+.service__card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.service__image-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    transition: transform 0.2s ease;
+}
+
+.service__card:hover .service__image-placeholder {
+    transform: scale(1.02);
+}
+
+.service__image-placeholder .placeholder-icon {
+    color: #888;
+}
+
+.service__image-placeholder span {
+    font-size: 1.3rem;
+    color: #666;
+}
+
+.service__card-content {
+    padding: 24px 0;
+}
+
+.service__card-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.service__card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.service__card-title a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.service__card-title a:hover {
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+.service__card-title i {
+    font-size: 1.4rem;
+    transition: transform 0.2s ease;
+}
+
+.service__card-title a:hover i {
+    transform: translateX(4px);
+}
+
+.service__card-description {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+}
+
+/* ================================
+   Results（実績数値）セクション
+================================ */
+.results {
+    background-color: rgba(33, 150, 243, 0.04);
+}
+
+.results__header {
+    margin-bottom: 48px;
+}
+
+.results__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.results__label-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+}
+
+.results__title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+.results__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.results__card {
+    background-color: var(--color-white);
+    padding: 40px 32px;
+    text-align: center;
+    border: 1px solid var(--color-gray);
+}
+
+.results__card-label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 16px;
+}
+
+.results__card-text {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    text-align: left;
+}
+
+/* ================================
+   Pickup（注目記事）セクション
+================================ */
+.pickup {
+    background-color: var(--color-white);
+}
+
+.pickup__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+}
+
+.pickup__header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.pickup__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.pickup__label-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+}
+
+.pickup__title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+.pickup__more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.pickup__more-btn:hover {
+    background-color: var(--color-primary-dark);
+    opacity: 1;
+}
+
+.pickup__more-btn i {
+    font-size: 1.2rem;
+}
+
+.pickup__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.pickup__card {
+    position: relative;
+    cursor: pointer;
+}
+
+.pickup__card-image {
+    position: relative;
+    z-index: 2;
+    transform: translate(-6%, -6%);
+}
+
+.pickup__image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.pickup__image-placeholder .placeholder-icon {
+    color: #888;
+}
+
+.pickup__image-placeholder span {
+    font-size: 1.3rem;
+    color: #666;
+}
+
+.pickup__card-body {
+    position: relative;
+    background: linear-gradient(135deg, #90CAF9 0%, #64B5F6 50%, #42A5F5 100%);
+    padding: calc(75% - 10px) 24px 24px;
+    margin-top: calc(-75% + 30px);
+}
+
+.pickup__card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: var(--color-white);
+    color: var(--color-text);
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.pickup__tag-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+}
+
+.pickup__card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.pickup__card-hashtags {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ================================
+   Contact（お問い合わせ）セクション
+================================ */
+.contact {
+    background-color: var(--color-gray-light);
+}
+
+.contact__header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.contact__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.contact__label-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+}
+
+.contact__title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+.contact__description {
+    font-size: 1.6rem;
+    color: var(--color-text-light);
+}
+
+.contact__form-wrapper {
+    background-color: var(--color-white);
+    padding: 48px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact__form-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact__required {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-white);
+    background-color: var(--color-primary-dark);
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.contact__form-input,
+.contact__form-select,
+.contact__form-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact__form-input:focus,
+.contact__form-select:focus,
+.contact__form-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.contact__form-input::placeholder,
+.contact__form-textarea::placeholder {
+    color: #bdbdbd;
+}
+
+.contact__form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.contact__form-textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact__form-group--checkbox {
+    flex-direction: row;
+    align-items: center;
+}
+
+.contact__checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.contact__form-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.contact__checkbox-text {
+    font-size: 1.4rem;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact__checkbox-text a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.contact__form-submit {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.contact__submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 240px;
+    padding: 18px 40px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.contact__submit-btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.contact__submit-btn i {
+    font-size: 1.4rem;
+}
+
+/* ================================
+   フッター
+================================ */
+.footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+}
+
+.footer__main {
+    padding: 60px 0 40px;
+}
+
+.footer__inner {
+    display: flex;
+    gap: 80px;
+}
+
+.footer__logo a {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+}
+
+.footer__logo a:hover {
+    opacity: 0.8;
+}
+
+.footer__logo-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 200px;
+}
+
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer__address {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.footer__tel {
+    font-size: 1.4rem;
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer__tel i {
+    font-size: 1.2rem;
+}
+
+.footer__sns {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.footer__sns-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 1.6rem;
+    transition: background-color 0.2s ease;
+}
+
+.footer__sns-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+
+.footer__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex: 1;
+}
+
+.footer__nav-column {
+    min-width: 120px;
+}
+
+.footer__nav-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 16px;
+}
+
+.footer__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer__nav-list li a {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.2s ease;
+}
+
+.footer__nav-list li a:hover {
+    color: var(--color-white);
+    opacity: 1;
+}
+
+.footer__bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer__copyright {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer__copyright a {
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 8px;
+}
+
+.footer__copyright a:hover {
+    color: var(--color-white);
+    opacity: 1;
+}
+
+/* ================================
+   レスポンシブ
+================================ */
+
+/* タブレット（1023px以下）- ハンバーガーメニュー & モバイルMV */
+@media (max-width: 1023px) {
+    .header__nav {
+        display: none;
+    }
+
+    .header__cta {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* ヒーローセクション タブレット */
+    .hero {
+        position: relative;
+        padding-top: 80px;
+        min-height: auto;
+        display: block;
+    }
+
+    /* モバイル用背景画像 */
+    .hero__bg-image {
+        display: block;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+
+    /* モバイル用スライダー */
+    .hero__bg-image .hero__slider {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .hero__bg-image .hero__slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero__bg-image .hero__image-placeholder {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* コンテンツを画像の上に重ねる */
+    .hero__content {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 100%;
+        padding: 20px 40px;
+        background-color: transparent;
+    }
+
+    .hero__subcopy {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: var(--color-text);
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .hero__title {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        color: var(--color-text);
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .hero__title-main {
+        font-size: 4.2rem;
+    }
+
+    .hero__description {
+        font-size: 1.6rem;
+        line-height: 1.8;
+        color: var(--color-text);
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    /* PC用ビジュアルを非表示 */
+    .hero__visual {
+        display: none;
+    }
+
+    .hero__bg-stripe {
+        display: none;
+    }
+
+    /* Aboutセクション タブレット */
+    .about::before {
+        width: 200px;
+        height: 200px;
+        top: -50px;
+        right: -50px;
+    }
+
+    .about__inner {
+        flex-direction: column-reverse;
+        gap: 48px;
+    }
+
+    .about__image {
+        width: 100%;
+    }
+
+    .about__image-placeholder {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .about__content {
+        width: 100%;
+        text-align: left;
+    }
+
+    .about__title {
+        font-size: 3rem;
+    }
+
+    /* 実績セクション タブレット */
+    .achievements__title {
+        font-size: 2.6rem;
+        margin-bottom: 48px;
+    }
+
+    .achievements__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .achievements__card {
+        padding: 36px 20px;
+    }
+
+    .achievements__card-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+
+    .achievements__card-icon i {
+        font-size: 2.4rem;
+    }
+
+    /* サービスセクション タブレット */
+    .service__title {
+        font-size: 2.8rem;
+    }
+
+    .service__grid {
+        gap: 32px;
+    }
+
+    .service__card-title {
+        font-size: 1.8rem;
+    }
+
+    /* Resultsセクション タブレット */
+    .results__title {
+        font-size: 2.8rem;
+    }
+
+    .results__grid {
+        gap: 24px;
+    }
+
+    .results__card {
+        padding: 32px 24px;
+    }
+
+    /* Pickupセクション タブレット */
+    .pickup__title {
+        font-size: 2.8rem;
+    }
+
+    .pickup__grid {
+        gap: 24px;
+    }
+
+    .pickup__card-title {
+        font-size: 1.6rem;
+    }
+
+    /* フッター タブレット */
+    .footer__inner {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer__logo-area {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__tel {
+        justify-content: center;
+    }
+
+    .footer__sns {
+        justify-content: center;
+    }
+
+    .footer__nav {
+        justify-content: center;
+    }
+}
+
+/* タブレット（768px以下） */
+@media (max-width: 768px) {
+    .header__inner {
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .header__logo a {
+        font-size: 2.4rem;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero__bg-image .hero__slider {
+        aspect-ratio: 4 / 3;
+    }
+
+    .hero__content {
+        padding: 20px 30px;
+    }
+
+    .hero__subcopy {
+        font-size: 1.8rem;
+    }
+
+    .hero__title {
+        font-size: 2.4rem;
+    }
+
+    .hero__title-main {
+        font-size: 3.6rem;
+    }
+
+    .hero__description {
+        font-size: 1.5rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    /* 実績セクション 768px以下 - 1カラム */
+    .achievements__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .achievements__card {
+        padding: 32px 24px;
+    }
+
+    .achievements__card-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    /* サービスセクション 768px以下 - 1カラム */
+    .service__header {
+        margin-bottom: 40px;
+    }
+
+    .service__title {
+        font-size: 2.6rem;
+    }
+
+    .service__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .service__card-content {
+        padding: 20px 0;
+    }
+
+    .service__card-title {
+        font-size: 1.8rem;
+    }
+
+    /* Resultsセクション 768px以下 */
+    .results__header {
+        margin-bottom: 40px;
+    }
+
+    .results__title {
+        font-size: 2.6rem;
+    }
+
+    .results__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .results__card {
+        padding: 32px 24px;
+    }
+
+    /* Pickupセクション 768px以下 */
+    .pickup__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .pickup__title {
+        font-size: 2.6rem;
+    }
+
+    .pickup__grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding-left: 24px;
+    }
+
+    .pickup__card-body {
+        padding: calc(75% - 10px) 20px 20px;
+        margin-top: calc(-75% + 30px);
+    }
+
+    .pickup__card-title {
+        font-size: 1.6rem;
+    }
+
+    /* Contactセクション 768px以下 */
+    .contact__title {
+        font-size: 2.6rem;
+    }
+
+    .contact__form-wrapper {
+        padding: 32px 24px;
+    }
+
+    .contact__form {
+        gap: 20px;
+    }
+
+    .contact__submit-btn {
+        width: 100%;
+    }
+
+    /* フッター 768px以下 */
+    .footer__main {
+        padding: 48px 0 32px;
+    }
+
+    .footer__nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .footer__nav-column {
+        min-width: auto;
+        flex: 1;
+        text-align: center;
+    }
+
+    .footer__nav-title {
+        font-size: 1.3rem;
+    }
+
+    .footer__nav-list li a {
+        font-size: 1.2rem;
+    }
+}
+
+/* スマートフォン（480px以下） */
+@media (max-width: 480px) {
+    html {
+        font-size: 56.25%; /* 9px = 1rem */
+    }
+
+    .header__inner {
+        padding: 0 10px;
+        height: 56px;
+    }
+
+    .header__logo a {
+        font-size: 2rem;
+    }
+
+    /* ヒーローセクション スマートフォン */
+    .hero {
+        padding-top: 56px;
+    }
+
+    .hero__bg-image .hero__slider {
+        aspect-ratio: 3 / 4;
+    }
+
+    .hero__content {
+        padding: 15px 20px;
+    }
+
+    .hero__subcopy {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .hero__title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .hero__title-main {
+        font-size: 2.6rem;
+    }
+
+    .hero__description {
+        font-size: 1.3rem;
+        line-height: 1.7;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Aboutセクション スマートフォン */
+    .about::before {
+        display: none;
+    }
+
+    .about__inner {
+        gap: 32px;
+    }
+
+    .about__label {
+        font-size: 1.2rem;
+        padding: 6px 12px;
+    }
+
+    .about__title {
+        font-size: 2.4rem;
+    }
+
+    .about__description {
+        font-size: 1.4rem;
+    }
+
+    /* 実績セクション スマートフォン */
+    .achievements__title {
+        font-size: 2.2rem;
+        margin-bottom: 32px;
+    }
+
+    .achievements__card {
+        padding: 28px 20px;
+    }
+
+    .achievements__card-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 16px;
+    }
+
+    .achievements__card-icon i {
+        font-size: 2rem;
+    }
+
+    .achievements__card-label {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .achievements__card-text {
+        font-size: 1.3rem;
+    }
+
+    /* サービスセクション スマートフォン */
+    .service__header {
+        margin-bottom: 32px;
+    }
+
+    .service__label {
+        font-size: 1.2rem;
+    }
+
+    .service__title {
+        font-size: 2.2rem;
+    }
+
+    .service__grid {
+        gap: 24px;
+    }
+
+    .service__card-content {
+        padding: 16px 0;
+    }
+
+    .service__card-tag {
+        font-size: 1.1rem;
+        padding: 3px 10px;
+    }
+
+    .service__card-title {
+        font-size: 1.6rem;
+    }
+
+    .service__card-description {
+        font-size: 1.3rem;
+    }
+
+    /* Resultsセクション スマートフォン */
+    .results__header {
+        margin-bottom: 32px;
+    }
+
+    .results__label {
+        font-size: 1.2rem;
+    }
+
+    .results__title {
+        font-size: 2.2rem;
+    }
+
+    .results__card {
+        padding: 28px 20px;
+    }
+
+    .results__card-label {
+        font-size: 1.4rem;
+    }
+
+    .results__card-text {
+        font-size: 1.3rem;
+    }
+
+    /* Pickupセクション スマートフォン */
+    .pickup__header {
+        margin-bottom: 32px;
+    }
+
+    .pickup__label {
+        font-size: 1.2rem;
+    }
+
+    .pickup__title {
+        font-size: 2.2rem;
+    }
+
+    .pickup__more-btn {
+        padding: 10px 20px;
+        font-size: 1.3rem;
+    }
+
+    .pickup__grid {
+        gap: 48px;
+    }
+
+    .pickup__card-body {
+        padding: calc(75% - 10px) 16px 16px;
+        margin-top: calc(-75% + 30px);
+    }
+
+    .pickup__card-tag {
+        font-size: 1.1rem;
+        padding: 4px 10px;
+    }
+
+    .pickup__card-title {
+        font-size: 1.5rem;
+    }
+
+    .pickup__card-hashtags {
+        font-size: 1.1rem;
+    }
+
+    /* Contactセクション スマートフォン */
+    .contact__header {
+        margin-bottom: 32px;
+    }
+
+    .contact__label {
+        font-size: 1.2rem;
+    }
+
+    .contact__title {
+        font-size: 2.2rem;
+    }
+
+    .contact__description {
+        font-size: 1.4rem;
+    }
+
+    .contact__form-wrapper {
+        padding: 24px 16px;
+    }
+
+    .contact__form {
+        gap: 18px;
+    }
+
+    .contact__form-label {
+        font-size: 1.4rem;
+    }
+
+    .contact__form-input,
+    .contact__form-select,
+    .contact__form-textarea {
+        padding: 12px 14px;
+        font-size: 1.5rem;
+    }
+
+    .contact__checkbox-text {
+        font-size: 1.3rem;
+    }
+
+    .contact__submit-btn {
+        padding: 16px 32px;
+        font-size: 1.5rem;
+    }
+
+    /* フッター スマートフォン */
+    .footer__main {
+        padding: 40px 0 24px;
+    }
+
+    .footer__logo a {
+        font-size: 2.6rem;
+    }
+
+    .footer__nav {
+        gap: 24px;
+    }
+
+    .footer__nav-column {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer__nav-title {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .footer__nav-list {
+        gap: 8px;
+    }
+
+    .footer__nav-list li a {
+        font-size: 1.3rem;
+    }
+
+    .footer__bottom {
+        padding: 16px 0;
+    }
+
+    .footer__copyright {
+        font-size: 1.2rem;
+    }
+}
+
+/* モバイルメニュー オーバーレイ */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* モバイルメニュー */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    max-width: 400px;
+    background-color: var(--color-white);
+    z-index: 999;
+    padding: 80px 30px 30px;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+}
+
+.mobile-nav__list {
+    margin-bottom: 30px;
+}
+
+.mobile-nav__item a {
+    display: block;
+    padding: 15px 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.mobile-nav__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-nav__cta .btn {
+    justify-content: center;
+    width: 100%;
+}
+
+/* ================================
+   アクセシビリティ
+================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

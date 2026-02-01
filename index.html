@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="サイトの説明文がここに入ります">
+    <title>サイト名 | トップページ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="/">LOGO</a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#">トップ</a></li>
+                    <li class="header__nav-item has-dropdown">
+                        <a href="#">サービス <span class="arrow">▼</span></a>
+                        <ul class="dropdown">
+                            <li><a href="#">サービス1</a></li>
+                            <li><a href="#">サービス2</a></li>
+                            <li><a href="#">サービス3</a></li>
+                        </ul>
+                    </li>
+                    <li class="header__nav-item has-dropdown">
+                        <a href="#">トピックス <span class="arrow">▼</span></a>
+                        <ul class="dropdown">
+                            <li><a href="#">トピックス1</a></li>
+                            <li><a href="#">トピックス2</a></li>
+                        </ul>
+                    </li>
+                    <li class="header__nav-item"><a href="#">会社概要</a></li>
+                </ul>
+            </nav>
+            <div class="header__cta">
+                <a href="#" class="btn btn--outline">
+                    <i class="fa-regular fa-user"></i>
+                    お問い合わせ（個人）
+                </a>
+                <a href="#" class="btn btn--primary">
+                    <i class="fa-regular fa-building"></i>
+                    お問い合わせ（企業）
+                </a>
+            </div>
+            <button class="hamburger" type="button" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- モバイルナビゲーション オーバーレイ -->
+    <div class="mobile-nav-overlay"></div>
+
+    <!-- モバイルナビゲーション -->
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__list">
+            <li class="mobile-nav__item"><a href="#">トップ</a></li>
+            <li class="mobile-nav__item"><a href="#">サービス</a></li>
+            <li class="mobile-nav__item"><a href="#">トピックス</a></li>
+            <li class="mobile-nav__item"><a href="#">会社概要</a></li>
+        </ul>
+        <div class="mobile-nav__cta">
+            <a href="#" class="btn btn--outline">
+                <i class="fa-regular fa-user"></i>
+                お問い合わせ（個人）
+            </a>
+            <a href="#" class="btn btn--primary">
+                <i class="fa-regular fa-building"></i>
+                お問い合わせ（企業）
+            </a>
+        </div>
+    </nav>
+
+    <!-- メインビジュアル（クロスフェードスライダー） -->
+    <section class="hero">
+        <!-- スライダー背景（モバイル用） -->
+        <div class="hero__bg-image">
+            <div class="hero__slider hero__slider--mobile">
+                <div class="hero__slide is-active">
+                    <div class="hero__image-placeholder">
+                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <span>スライド画像 1<br>1200 x 800</span>
+                    </div>
+                </div>
+                <div class="hero__slide">
+                    <div class="hero__image-placeholder">
+                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <span>スライド画像 2<br>1200 x 800</span>
+                    </div>
+                </div>
+                <div class="hero__slide">
+                    <div class="hero__image-placeholder">
+                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <span>スライド画像 3<br>1200 x 800</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- コンテンツ -->
+        <div class="hero__content">
+            <p class="hero__subcopy">ここにサブコピーが入ります。</p>
+            <h1 class="hero__title">
+                <span class="hero__title-main">メインコピー</span>という<br>
+                <span class="hero__title-main">新常識。</span>
+            </h1>
+            <p class="hero__description">
+                ここに説明文が入ります。<br>
+                サービスの特徴や魅力を伝える文章。<br>
+                ユーザーに響くメッセージを記載します。
+            </p>
+        </div>
+        <!-- PC用ビジュアル（クロスフェードスライダー） -->
+        <div class="hero__visual">
+            <div class="hero__image-wrapper">
+                <div class="hero__slider hero__slider--pc">
+                    <div class="hero__slide is-active">
+                        <div class="hero__image-placeholder">
+                            <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                            <span>スライド画像 1<br>1200 x 800</span>
+                        </div>
+                    </div>
+                    <div class="hero__slide">
+                        <div class="hero__image-placeholder">
+                            <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                            <span>スライド画像 2<br>1200 x 800</span>
+                        </div>
+                    </div>
+                    <div class="hero__slide">
+                        <div class="hero__image-placeholder">
+                            <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                            <span>スライド画像 3<br>1200 x 800</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__service-badge">
+                <p class="hero__service-text">サービスキャッチコピー</p>
+                <p class="hero__service-name">SERVICE NAME</p>
+            </div>
+        </div>
+        <div class="hero__bg-stripe"></div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- What's セクション -->
+        <section class="about section">
+            <div class="container">
+                <div class="about__inner">
+                    <div class="about__content">
+                        <p class="about__label"><span class="about__label-dot"></span>What's サイト名?</p>
+                        <h2 class="about__title">
+                            新たな視点で、<br>
+                            求職者／採用企業に向き合う
+                        </h2>
+                        <p class="about__description">
+                            ここに会社やサービスの説明文が入ります。<br>
+                            お客様への支援内容や活動について記載します。
+                        </p>
+                    </div>
+                    <div class="about__image">
+                        <div class="about__image-placeholder">
+                            <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                            <span>図解画像<br>600 x 400</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 実績セクション -->
+        <section class="achievements section">
+            <div class="container">
+                <h2 class="achievements__title">
+                    サービスに関わる<span class="achievements__title-highlight">全ての方</span>をサポートします
+                </h2>
+                <div class="achievements__grid">
+                    <div class="achievements__card">
+                        <div class="achievements__card-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <p class="achievements__card-label">ここにラベルが入ります</p>
+                        <p class="achievements__card-text">ここに仮のテキストが入ります。実際の数値や説明文がここに表示されます。</p>
+                    </div>
+                    <div class="achievements__card">
+                        <div class="achievements__card-icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <p class="achievements__card-label">ここにラベルが入ります</p>
+                        <p class="achievements__card-text">ここに仮のテキストが入ります。実際の数値や説明文がここに表示されます。</p>
+                    </div>
+                    <div class="achievements__card">
+                        <div class="achievements__card-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <p class="achievements__card-label">ここにラベルが入ります</p>
+                        <p class="achievements__card-text">ここに仮のテキストが入ります。実際の数値や説明文がここに表示されます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSセクション -->
+        <section class="service section">
+            <div class="container">
+                <div class="service__header">
+                    <p class="service__label"><span class="service__label-dot"></span>News</p>
+                    <h2 class="service__title">新着情報</h2>
+                </div>
+                <div class="service__grid">
+                    <div class="service__card">
+                        <div class="service__card-image">
+                            <div class="service__image-placeholder">
+                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>サービス画像<br>600 x 400</span>
+                            </div>
+                        </div>
+                        <div class="service__card-content">
+                            <span class="service__card-tag">カテゴリ1</span>
+                            <h3 class="service__card-title">
+                                <a href="#">サービス名がここに入ります <i class="fa-solid fa-arrow-right"></i></a>
+                            </h3>
+                            <p class="service__card-description">ここにサービスの説明文が入ります。お客様に提供する価値や特徴について記載します。</p>
+                        </div>
+                    </div>
+                    <div class="service__card">
+                        <div class="service__card-image">
+                            <div class="service__image-placeholder">
+                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>サービス画像<br>600 x 400</span>
+                            </div>
+                        </div>
+                        <div class="service__card-content">
+                            <span class="service__card-tag">カテゴリ2</span>
+                            <h3 class="service__card-title">
+                                <a href="#">サービス名がここに入ります <i class="fa-solid fa-arrow-right"></i></a>
+                            </h3>
+                            <p class="service__card-description">ここにサービスの説明文が入ります。お客様に提供する価値や特徴について記載します。</p>
+                        </div>
+                    </div>
+                    <div class="service__card">
+                        <div class="service__card-image">
+                            <div class="service__image-placeholder">
+                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>サービス画像<br>600 x 400</span>
+                            </div>
+                        </div>
+                        <div class="service__card-content">
+                            <span class="service__card-tag">カテゴリ3</span>
+                            <h3 class="service__card-title">
+                                <a href="#">サービス名がここに入ります <i class="fa-solid fa-arrow-right"></i></a>
+                            </h3>
+                            <p class="service__card-description">ここにサービスの説明文が入ります。お客様に提供する価値や特徴について記載します。</p>
+                        </div>
+                    </div>
+                    <div class="service__card">
+                        <div class="service__card-image">
+                            <div class="service__image-placeholder">
+                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>サービス画像<br>600 x 400</span>
+                            </div>
+                        </div>
+                        <div class="service__card-content">
+                            <span class="service__card-tag">カテゴリ4</span>
+                            <h3 class="service__card-title">
+                                <a href="#">サービス名がここに入ります <i class="fa-solid fa-arrow-right"></i></a>
+                            </h3>
+                            <p class="service__card-description">ここにサービスの説明文が入ります。お客様に提供する価値や特徴について記載します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 実績数値セクション -->
+        <section class="results section">
+            <div class="container">
+                <div class="results__header">
+                    <p class="results__label"><span class="results__label-dot"></span>Results</p>
+                    <h2 class="results__title">サポート実績</h2>
+                </div>
+                <div class="results__grid">
+                    <div class="results__card">
+                        <p class="results__card-label">ここにラベルが入ります</p>
+                        <p class="results__card-text">ここに仮のテキストが入ります。実際の数値や説明文がここに表示されます。</p>
+                    </div>
+                    <div class="results__card">
+                        <p class="results__card-label">ここにラベルが入ります</p>
+                        <p class="results__card-text">ここに仮のテキストが入ります。実際の数値や説明文がここに表示されます。</p>
+                    </div>
+                    <div class="results__card">
+                        <p class="results__card-label">ここにラベルが入ります</p>
+                        <p class="results__card-text">ここに仮のテキストが入ります。実際の数値や説明文がここに表示されます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- メンバー紹介セクション -->
+        <section class="pickup section">
+            <div class="container">
+                <div class="pickup__header">
+                    <div class="pickup__header-left">
+                        <p class="pickup__label"><span class="pickup__label-dot"></span>Member</p>
+                        <h2 class="pickup__title">メンバー紹介</h2>
+                    </div>
+                    <a href="#" class="pickup__more-btn">
+                        メンバー一覧 <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+                <div class="pickup__grid">
+                    <article class="pickup__card">
+                        <div class="pickup__card-image">
+                            <div class="pickup__image-placeholder">
+                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>記事画像<br>400 x 300</span>
+                            </div>
+                        </div>
+                        <div class="pickup__card-body">
+                            <span class="pickup__card-tag"><span class="pickup__tag-dot"></span>カテゴリ名</span>
+                            <h3 class="pickup__card-title">記事タイトルがここに入ります</h3>
+                            <p class="pickup__card-hashtags">#タグ1 #タグ2</p>
+                        </div>
+                    </article>
+                    <article class="pickup__card">
+                        <div class="pickup__card-image">
+                            <div class="pickup__image-placeholder">
+                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>記事画像<br>400 x 300</span>
+                            </div>
+                        </div>
+                        <div class="pickup__card-body">
+                            <span class="pickup__card-tag"><span class="pickup__tag-dot"></span>カテゴリ名</span>
+                            <h3 class="pickup__card-title">記事タイトルがここに入ります</h3>
+                            <p class="pickup__card-hashtags">#タグ1 #タグ2</p>
+                        </div>
+                    </article>
+                    <article class="pickup__card">
+                        <div class="pickup__card-image">
+                            <div class="pickup__image-placeholder">
+                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>記事画像<br>400 x 300</span>
+                            </div>
+                        </div>
+                        <div class="pickup__card-body">
+                            <span class="pickup__card-tag"><span class="pickup__tag-dot"></span>カテゴリ名</span>
+                            <h3 class="pickup__card-title">記事タイトルがここに入ります</h3>
+                            <p class="pickup__card-hashtags">#タグ1 #タグ2</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせセクション -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="contact__header">
+                    <p class="contact__label"><span class="contact__label-dot"></span>Contact</p>
+                    <h2 class="contact__title">お問い合わせ</h2>
+                    <p class="contact__description">ご質問・ご相談がございましたら、お気軽にお問い合わせください。</p>
+                </div>
+                <div class="contact__form-wrapper">
+                    <form class="contact__form">
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-name">
+                                お名前<span class="contact__required">必須</span>
+                            </label>
+                            <input type="text" id="contact-name" class="contact__form-input" placeholder="山田 太郎">
+                        </div>
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-company">
+                                会社名
+                            </label>
+                            <input type="text" id="contact-company" class="contact__form-input" placeholder="株式会社〇〇">
+                        </div>
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-email">
+                                メールアドレス<span class="contact__required">必須</span>
+                            </label>
+                            <input type="email" id="contact-email" class="contact__form-input" placeholder="example@email.com">
+                        </div>
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-phone">
+                                電話番号
+                            </label>
+                            <input type="tel" id="contact-phone" class="contact__form-input" placeholder="090-1234-5678">
+                        </div>
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-subject">
+                                お問い合わせ種別<span class="contact__required">必須</span>
+                            </label>
+                            <select id="contact-subject" class="contact__form-select">
+                                <option value="">選択してください</option>
+                                <option value="service">サービスについて</option>
+                                <option value="estimate">お見積りについて</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-message">
+                                お問い合わせ内容<span class="contact__required">必須</span>
+                            </label>
+                            <textarea id="contact-message" class="contact__form-textarea" rows="6" placeholder="お問い合わせ内容をご記入ください"></textarea>
+                        </div>
+                        <div class="contact__form-group contact__form-group--checkbox">
+                            <label class="contact__checkbox-label">
+                                <input type="checkbox" class="contact__form-checkbox">
+                                <span class="contact__checkbox-text">
+                                    <a href="#">プライバシーポリシー</a>に同意する<span class="contact__required">必須</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="contact__form-submit">
+                            <button type="submit" class="contact__submit-btn">
+                                送信する<i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__logo-area">
+                        <div class="footer__logo">
+                            <a href="#">LOGO</a>
+                        </div>
+                        <div class="footer__info">
+                            <p class="footer__address">〒000-0000<br>東京都〇〇区〇〇 0-0-0</p>
+                            <p class="footer__tel"><i class="fa-solid fa-phone"></i> 00-0000-0000</p>
+                        </div>
+                        <div class="footer__sns">
+                            <a href="#" class="footer__sns-link" aria-label="X(Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="footer__sns-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="footer__sns-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="footer__sns-link" aria-label="LINE"><i class="fa-brands fa-line"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer__nav">
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">サービス</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="#">サービス1</a></li>
+                                <li><a href="#">サービス2</a></li>
+                                <li><a href="#">サービス3</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">トピックス</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="#">注目記事</a></li>
+                                <li><a href="#">お知らせ</a></li>
+                                <li><a href="#">コラム</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">お問い合わせ</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="#">個人の方</a></li>
+                                <li><a href="#">企業の方</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">サポート実績</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="#">実績一覧</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">会社概要</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="#">会社情報</a></li>
+                                <li><a href="#">アクセス</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p class="footer__copyright">&copy; 2026 サイト名｜<a href="#">プライバシーポリシー</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
