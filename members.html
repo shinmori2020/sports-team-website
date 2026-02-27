@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="チームメンバーをご紹介します。">
+    <title>メンバー紹介 | サイト名</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="index.html">LOGO</a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="index.html">トップ</a></li>
+                    <li class="header__nav-item"><a href="company.html">会社説明</a></li>
+                    <li class="header__nav-item"><a href="members.html">メンバー紹介</a></li>
+                    <li class="header__nav-item"><a href="project.html">プロジェクト</a></li>
+                    <li class="header__nav-item"><a href="partners.html">パートナーズ</a></li>
+                </ul>
+            </nav>
+            <div class="header__cta">
+                <a href="index.html#contact" class="btn btn--primary">
+                    <i class="fa-regular fa-envelope"></i>
+                    お問い合わせ
+                </a>
+            </div>
+            <button class="hamburger" type="button" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- モバイルナビゲーション オーバーレイ -->
+    <div class="mobile-nav-overlay"></div>
+
+    <!-- モバイルナビゲーション -->
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__list">
+            <li class="mobile-nav__item"><a href="index.html">トップ</a></li>
+            <li class="mobile-nav__item"><a href="company.html">会社説明</a></li>
+            <li class="mobile-nav__item"><a href="members.html">メンバー紹介</a></li>
+            <li class="mobile-nav__item"><a href="project.html">プロジェクト</a></li>
+            <li class="mobile-nav__item"><a href="partners.html">パートナーズ</a></li>
+        </ul>
+        <div class="mobile-nav__cta">
+            <a href="index.html#contact" class="btn btn--primary">
+                <i class="fa-regular fa-envelope"></i>
+                お問い合わせ
+            </a>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header__content">
+                <p class="page-header__label"><span class="page-header__label-dot"></span>Members</p>
+                <h1 class="page-header__title">メンバー紹介</h1>
+                <p class="page-header__description">私たちのチームメンバーをご紹介します。</p>
+            </div>
+        </div>
+        <div class="page-header__bg"></div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- メンバー一覧 -->
+        <section class="members section">
+            <div class="container">
+                <div class="members__grid">
+                    <!-- メンバー1 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">代表 / キャプテン</p>
+                                <h3 class="member-card__name">山田 太郎</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー2 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">副キャプテン</p>
+                                <h3 class="member-card__name">鈴木 一郎</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー3 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">選手</p>
+                                <h3 class="member-card__name">佐藤 健太</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー4 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">選手</p>
+                                <h3 class="member-card__name">田中 大輔</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー5 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">選手</p>
+                                <h3 class="member-card__name">高橋 翔</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー6 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">選手</p>
+                                <h3 class="member-card__name">伊藤 拓海</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー7 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">選手</p>
+                                <h3 class="member-card__name">渡辺 隼人</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー8 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">選手</p>
+                                <h3 class="member-card__name">中村 優斗</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー9 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">選手</p>
+                                <h3 class="member-card__name">小林 颯太</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー10 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">選手</p>
+                                <h3 class="member-card__name">加藤 蓮</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー11 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">選手</p>
+                                <h3 class="member-card__name">吉田 悠真</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー12 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">選手</p>
+                                <h3 class="member-card__name">山本 陸</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー13 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">マネージャー</p>
+                                <h3 class="member-card__name">松本 美咲</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー14 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">コーチ</p>
+                                <h3 class="member-card__name">井上 誠</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- メンバー15 -->
+                    <article class="member-card">
+                        <a href="member-detail.html" class="member-card__link">
+                            <div class="member-card__image">
+                                <div class="member-card__image-placeholder">
+                                    <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                        <circle cx="12" cy="8" r="4"></circle>
+                                        <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                    </svg>
+                                    <span>メンバー写真</span>
+                                </div>
+                            </div>
+                            <div class="member-card__content">
+                                <p class="member-card__position">トレーナー</p>
+                                <h3 class="member-card__name">木村 直樹</h3>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせCTA -->
+        <section class="cta section section--primary">
+            <div class="container">
+                <div class="cta__inner">
+                    <h2 class="cta__title">お問い合わせはこちら</h2>
+                    <p class="cta__description">チームへのご質問・ご相談はお気軽にどうぞ。</p>
+                    <a href="index.html#contact" class="cta__btn">
+                        お問い合わせ <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__logo-area">
+                        <div class="footer__logo">
+                            <a href="index.html">LOGO</a>
+                        </div>
+                        <div class="footer__info">
+                            <p class="footer__address">〒000-0000<br>東京都〇〇区〇〇 0-0-0</p>
+                            <p class="footer__tel"><i class="fa-solid fa-phone"></i> 00-0000-0000</p>
+                        </div>
+                        <div class="footer__sns">
+                            <a href="#" class="footer__sns-link" aria-label="X(Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="footer__sns-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="footer__sns-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="footer__sns-link" aria-label="LINE"><i class="fa-brands fa-line"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer__nav">
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">メニュー</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="index.html">トップ</a></li>
+                                <li><a href="company.html">会社説明</a></li>
+                                <li><a href="members.html">メンバー紹介</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">コンテンツ</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="project.html">プロジェクト</a></li>
+                                <li><a href="partners.html">パートナーズ</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">お問い合わせ</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="index.html#contact">お問い合わせフォーム</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p class="footer__copyright">&copy; 2026 サイト名｜<a href="#">プライバシーポリシー</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

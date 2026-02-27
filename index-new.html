@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="スポーツチーム公式サイト">
+    <title>サイト名 | トップページ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ヘッダー（SONY風 白背景） -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="index-new.html">LOGO</a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="index-new.html">トップ</a></li>
+                    <li class="header__nav-item"><a href="company.html">会社説明</a></li>
+                    <li class="header__nav-item"><a href="members.html">メンバー紹介</a></li>
+                    <li class="header__nav-item"><a href="project.html">プロジェクト</a></li>
+                    <li class="header__nav-item"><a href="partners.html">パートナーズ</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="hamburger" type="button" aria-label="メニューを開く">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- モバイルナビゲーション オーバーレイ -->
+    <div class="mobile-nav-overlay"></div>
+
+    <!-- モバイルナビゲーション -->
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__list">
+            <li class="mobile-nav__item"><a href="index-new.html">トップ</a></li>
+            <li class="mobile-nav__item"><a href="company.html">会社説明</a></li>
+            <li class="mobile-nav__item"><a href="members.html">メンバー紹介</a></li>
+            <li class="mobile-nav__item"><a href="project.html">プロジェクト</a></li>
+            <li class="mobile-nav__item"><a href="partners.html">パートナーズ</a></li>
+        </ul>
+        <div class="mobile-nav__cta">
+            <a href="#contact" class="mobile-nav__contact-link">お問い合わせ</a>
+        </div>
+    </nav>
+
+    <!-- メインビジュアル（スクロール駆動アニメーション） -->
+    <section class="mv">
+        <div class="mv__sticky">
+            <!-- 画像エリア -->
+            <div class="mv__image-area">
+                <div class="mv__slides">
+                    <div class="mv__slide is-active" data-index="0">
+                        <div class="mv__slide-image">
+                            <div class="mv__image-placeholder">
+                                <span>メインビジュアル画像 1<br>1920 x 1080</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mv__slide" data-index="1">
+                        <div class="mv__slide-image">
+                            <div class="mv__image-placeholder mv__image-placeholder--02">
+                                <span>メインビジュアル画像 2<br>1920 x 1080</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mv__slide" data-index="2">
+                        <div class="mv__slide-image">
+                            <div class="mv__image-placeholder mv__image-placeholder--03">
+                                <span>メインビジュアル画像 3<br>1920 x 1080</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mv__slide" data-index="3">
+                        <div class="mv__slide-image">
+                            <div class="mv__image-placeholder mv__image-placeholder--04">
+                                <span>メインビジュアル画像 4<br>1920 x 1080</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- キャプション（画像下） -->
+            <div class="mv__caption">
+                <p class="mv__caption-text">スポーツの力で未来を創る、地域とともに歩む新しいチームの形</p>
+            </div>
+            <!-- コントロール（右上） -->
+            <div class="mv__controls">
+                <span class="mv__motion-label">モーション</span>
+                <button class="mv__pause-btn" type="button" aria-label="一時停止">
+                    <i class="fa-solid fa-pause"></i>
+                </button>
+            </div>
+            <!-- プログレスバー（右端） -->
+            <div class="mv__progress">
+                <div class="mv__progress-bar is-active" data-index="0">
+                    <div class="mv__progress-fill"></div>
+                </div>
+                <div class="mv__progress-bar" data-index="1">
+                    <div class="mv__progress-fill"></div>
+                </div>
+                <div class="mv__progress-bar" data-index="2">
+                    <div class="mv__progress-fill"></div>
+                </div>
+                <div class="mv__progress-bar" data-index="3">
+                    <div class="mv__progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- Missionセクション（SONY風） -->
+        <section class="mission section">
+            <div class="mission__bg">
+                <div class="mission__bg-image">
+                    <div class="mission__bg-placeholder">
+                        <span>背景画像（透過）<br>1920 x 1080</span>
+                    </div>
+                    <!-- 実画像: <img src="img/mission-bg.jpg" alt=""> -->
+                </div>
+            </div>
+            <div class="container">
+                <div class="mission__content">
+                    <p class="mission__en">Mission</p>
+                    <p class="mission__label">ミッション</p>
+                    <h2 class="mission__title">
+                        スポーツの力で<br>
+                        未来のコミュニティを<br>
+                        地域とともに共創する
+                    </h2>
+                    <a href="company.html" class="mission__link">
+                        <span class="mission__link-text">ミッションを見る</span>
+                        <span class="mission__link-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSセクション（SONY風） -->
+        <section class="news section">
+            <div class="container">
+                <h2 class="news__title">News Releases</h2>
+                <div class="news__content">
+                    <div class="news__sidebar">
+                        <p class="news__label">ニュースリリース</p>
+                        <a href="#" class="news__more-btn">
+                            ニュースリリース一覧
+                            <span class="news__more-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                    <div class="news__list">
+                        <a href="#" class="news__item">
+                            <div class="news__item-body">
+                                <div class="news__item-meta">
+                                    <time class="news__item-date">2026年2月20日</time>
+                                    <span class="news__item-tag">お知らせ</span>
+                                </div>
+                                <h3 class="news__item-title">ニュースタイトルがここに入ります。最新情報をお届けします。</h3>
+                                <p class="news__item-desc">チームの最新の活動情報・イベント告知をお届けします</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square news__item-icon"></i>
+                        </a>
+                        <a href="#" class="news__item">
+                            <div class="news__item-body">
+                                <div class="news__item-meta">
+                                    <time class="news__item-date">2026年2月15日</time>
+                                    <span class="news__item-tag">試合結果</span>
+                                </div>
+                                <h3 class="news__item-title">ニュースタイトルがここに入ります。試合のレポートを掲載します。</h3>
+                                <p class="news__item-desc">直近の試合結果と選手のコメントをまとめてお届け</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square news__item-icon"></i>
+                        </a>
+                        <a href="#" class="news__item">
+                            <div class="news__item-body">
+                                <div class="news__item-meta">
+                                    <time class="news__item-date">2026年2月10日</time>
+                                    <span class="news__item-tag">イベント</span>
+                                </div>
+                                <h3 class="news__item-title">ニュースタイトルがここに入ります。イベント情報をお届けします。</h3>
+                                <p class="news__item-desc">地域との交流イベント開催のお知らせ</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square news__item-icon"></i>
+                        </a>
+                        <a href="#" class="news__item">
+                            <div class="news__item-body">
+                                <div class="news__item-meta">
+                                    <time class="news__item-date">2026年2月1日</time>
+                                    <span class="news__item-tag">メディア</span>
+                                </div>
+                                <h3 class="news__item-title">ニュースタイトルがここに入ります。メディア掲載情報です。</h3>
+                                <p class="news__item-desc">各メディアでの掲載・取材情報をご紹介</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square news__item-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- メンバー紹介セクション（SONY風スライダー） -->
+        <section class="members section">
+            <div class="members__container">
+                <!-- 左：タイトル + ナビ -->
+                <div class="members__header">
+                    <p class="members__en">Members</p>
+                    <h2 class="members__title">メンバー紹介</h2>
+                    <div class="members__nav">
+                        <button class="members__nav-btn members__nav-prev" type="button" aria-label="前へ">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button class="members__nav-btn members__nav-next" type="button" aria-label="次へ">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- 右：スライダー -->
+                <div class="members__slider">
+                    <div class="members__slider-track">
+                        <article class="members__slide" data-index="0">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">山田 太郎</h3>
+                                    <p class="members__slide-desc">代表 / キャプテン。チームの創設メンバーとしてビジョンを牽引する。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="1">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">佐藤 花子</h3>
+                                    <p class="members__slide-desc">副代表。運営全般を統括し、チームの成長を支える。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="2">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">鈴木 一郎</h3>
+                                    <p class="members__slide-desc">コーチ。豊富な経験でメンバーの技術向上をサポート。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="3">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">田中 美咲</h3>
+                                    <p class="members__slide-desc">マネージャー。チーム運営とファンコミュニティを担当。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="4">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">高橋 健太</h3>
+                                    <p class="members__slide-desc">選手。攻撃の要としてチームを牽引する。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="5">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">渡辺 翔</h3>
+                                    <p class="members__slide-desc">選手。スピードと技術でチャンスを生み出す。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="6">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">伊藤 大輝</h3>
+                                    <p class="members__slide-desc">選手。堅実な守備でチームの安定を支える。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="7">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">中村 颯太</h3>
+                                    <p class="members__slide-desc">選手。若手ながら高いポテンシャルを持つ期待の星。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="8">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">小林 遥</h3>
+                                    <p class="members__slide-desc">選手。正確なパスワークでゲームを組み立てる。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="9">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">加藤 真由</h3>
+                                    <p class="members__slide-desc">トレーナー。選手のコンディション管理を担う。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="10">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">松本 拓也</h3>
+                                    <p class="members__slide-desc">選手。フィジカルの強さを活かしたプレーが持ち味。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="11">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">吉田 優衣</h3>
+                                    <p class="members__slide-desc">広報。SNS運用やメディア対応でチームの魅力を発信。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="12">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">木村 蓮</h3>
+                                    <p class="members__slide-desc">選手。テクニカルなドリブルで相手を翻弄する。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="13">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">山口 陽菜</h3>
+                                    <p class="members__slide-desc">選手。献身的なプレーでチームに貢献する。</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="members__slide" data-index="14">
+                            <a href="member-detail.html" class="members__slide-link">
+                                <div class="members__slide-image">
+                                    <div class="members__slide-placeholder">
+                                        <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <circle cx="12" cy="8" r="4"></circle>
+                                            <path d="M20 21a8 8 0 1 0-16 0"></path>
+                                        </svg>
+                                        <span>メンバー写真<br>800 x 500</span>
+                                    </div>
+                                </div>
+                                <div class="members__slide-info">
+                                    <h3 class="members__slide-name">斎藤 雄大</h3>
+                                    <p class="members__slide-desc">選手。冷静な判断力でチームの要となる。</p>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    <!-- プログレスバー -->
+                    <div class="members__progress">
+                        <div class="members__progress-fill"></div>
+                    </div>
+                    <span class="members__progress-counter">01</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせセクション（index.html準拠） -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="contact__header">
+                    <p class="contact__en">Contact</p>
+                    <h2 class="contact__title">お問い合わせ</h2>
+                </div>
+                <div class="contact__form-wrapper">
+                    <form class="contact__form">
+                        <div class="contact__form-row">
+                            <div class="contact__form-group">
+                                <label class="contact__form-label" for="contact-name">
+                                    お名前<span class="contact__required">必須</span>
+                                </label>
+                                <input type="text" id="contact-name" class="contact__form-input" placeholder="山田 太郎">
+                            </div>
+                            <div class="contact__form-group">
+                                <label class="contact__form-label" for="contact-company">
+                                    会社名
+                                </label>
+                                <input type="text" id="contact-company" class="contact__form-input" placeholder="株式会社〇〇">
+                            </div>
+                        </div>
+                        <div class="contact__form-row">
+                            <div class="contact__form-group">
+                                <label class="contact__form-label" for="contact-email">
+                                    メールアドレス<span class="contact__required">必須</span>
+                                </label>
+                                <input type="email" id="contact-email" class="contact__form-input" placeholder="example@email.com">
+                            </div>
+                            <div class="contact__form-group">
+                                <label class="contact__form-label" for="contact-phone">
+                                    電話番号
+                                </label>
+                                <input type="tel" id="contact-phone" class="contact__form-input" placeholder="090-1234-5678">
+                            </div>
+                        </div>
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-subject">
+                                お問い合わせ種別<span class="contact__required">必須</span>
+                            </label>
+                            <select id="contact-subject" class="contact__form-select">
+                                <option value="">選択してください</option>
+                                <option value="general">一般お問い合わせ</option>
+                                <option value="recruit">リクルート</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-message">
+                                お問い合わせ内容<span class="contact__required">必須</span>
+                            </label>
+                            <textarea id="contact-message" class="contact__form-textarea" rows="6" placeholder="お問い合わせ内容をご記入ください"></textarea>
+                        </div>
+                        <div class="contact__form-group contact__form-group--checkbox">
+                            <label class="contact__checkbox-label">
+                                <input type="checkbox" class="contact__form-checkbox">
+                                <span class="contact__checkbox-text">
+                                    <a href="#">プライバシーポリシー</a>に同意する<span class="contact__required">必須</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="contact__form-submit">
+                            <button type="submit" class="contact__submit-btn">
+                                送信する<i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター（黒ベース） -->
+    <footer class="footer">
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-sns">
+                    <span class="footer__bottom-sns-label">公式SNSアカウント</span>
+                    <div class="footer__bottom-sns-links">
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="X(Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer__bottom-bar">
+                    <div class="footer__bottom-links">
+                        <a href="#">ご利用条件</a>
+                        <a href="#">プライバシーポリシー</a>
+                        <a href="#">このサイトについて</a>
+                    </div>
+                    <p class="footer__copyright">&copy; 2026 サイト名</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main-new.js"></script>
+</body>
+</html>

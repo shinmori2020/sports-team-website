@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="チームの概要や事業内容、沿革についてご紹介します。">
+    <title>会社説明 | サイト名</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="index.html">LOGO</a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="index.html">トップ</a></li>
+                    <li class="header__nav-item"><a href="company.html">会社説明</a></li>
+                    <li class="header__nav-item"><a href="#">メンバー紹介</a></li>
+                    <li class="header__nav-item"><a href="project.html">プロジェクト</a></li>
+                    <li class="header__nav-item"><a href="#">パートナーズ</a></li>
+                </ul>
+            </nav>
+            <div class="header__cta">
+                <a href="index.html#contact" class="btn btn--primary">
+                    <i class="fa-regular fa-envelope"></i>
+                    お問い合わせ
+                </a>
+            </div>
+            <button class="hamburger" type="button" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- モバイルナビゲーション オーバーレイ -->
+    <div class="mobile-nav-overlay"></div>
+
+    <!-- モバイルナビゲーション -->
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__list">
+            <li class="mobile-nav__item"><a href="index.html">トップ</a></li>
+            <li class="mobile-nav__item"><a href="company.html">会社説明</a></li>
+            <li class="mobile-nav__item"><a href="#">メンバー紹介</a></li>
+            <li class="mobile-nav__item"><a href="project.html">プロジェクト</a></li>
+            <li class="mobile-nav__item"><a href="#">パートナーズ</a></li>
+        </ul>
+        <div class="mobile-nav__cta">
+            <a href="index.html#contact" class="btn btn--primary">
+                <i class="fa-regular fa-envelope"></i>
+                お問い合わせ
+            </a>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header__content">
+                <p class="page-header__label"><span class="page-header__label-dot"></span>About Us</p>
+                <h1 class="page-header__title">会社説明</h1>
+                <p class="page-header__description">私たちについてご紹介します。</p>
+            </div>
+        </div>
+        <div class="page-header__bg"></div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- 会社概要 -->
+        <section class="company-info section section--gray">
+            <div class="container">
+                <div class="company-info__header">
+                    <p class="company-info__label"><span class="company-info__label-dot"></span>Company Profile</p>
+                    <h2 class="company-info__title">会社概要</h2>
+                </div>
+                <div class="company-info__table-wrapper">
+                    <table class="company-info__table">
+                        <tbody>
+                            <tr>
+                                <th>チーム名</th>
+                                <td>〇〇スポーツクラブ</td>
+                            </tr>
+                            <tr>
+                                <th>設立</th>
+                                <td>2020年4月</td>
+                            </tr>
+                            <tr>
+                                <th>代表者</th>
+                                <td>山田 太郎</td>
+                            </tr>
+                            <tr>
+                                <th>所在地</th>
+                                <td>〒000-0000<br>東京都〇〇区〇〇 0-0-0</td>
+                            </tr>
+                            <tr>
+                                <th>電話番号</th>
+                                <td>00-0000-0000</td>
+                            </tr>
+                            <tr>
+                                <th>メールアドレス</th>
+                                <td>info@example.com</td>
+                            </tr>
+                            <tr>
+                                <th>活動内容</th>
+                                <td>
+                                    ・スポーツチームの運営<br>
+                                    ・地域スポーツイベントの企画・運営<br>
+                                    ・スポーツ教室の開催<br>
+                                    ・選手の育成・マネジメント
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 事業内容 -->
+        <section class="company-business section">
+            <div class="container">
+                <div class="company-business__header">
+                    <p class="company-business__label"><span class="company-business__label-dot"></span>Business</p>
+                    <h2 class="company-business__title">事業内容</h2>
+                </div>
+                <div class="company-business__grid">
+                    <div class="company-business__card">
+                        <div class="company-business__card-icon">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="company-business__card-title">チーム運営</h3>
+                        <p class="company-business__card-text">
+                            プロフェッショナルなチーム運営を通じて、選手が最高のパフォーマンスを発揮できる環境を整えています。
+                        </p>
+                    </div>
+                    <div class="company-business__card">
+                        <div class="company-business__card-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="company-business__card-title">地域貢献活動</h3>
+                        <p class="company-business__card-text">
+                            地域のスポーツイベントや教室を通じて、スポーツの楽しさを広め、健康的なコミュニティづくりに貢献しています。
+                        </p>
+                    </div>
+                    <div class="company-business__card">
+                        <div class="company-business__card-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="company-business__card-title">選手育成</h3>
+                        <p class="company-business__card-text">
+                            次世代を担う若い選手の発掘・育成に力を入れ、将来のスター選手を輩出することを目指しています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- アクセス -->
+        <section class="company-access section">
+            <div class="container">
+                <div class="company-access__header">
+                    <p class="company-access__label"><span class="company-access__label-dot"></span>Access</p>
+                    <h2 class="company-access__title">アクセス</h2>
+                </div>
+                <div class="company-access__inner">
+                    <div class="company-access__map">
+                        <div class="company-access__map-placeholder">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <span>Google Map<br>埋め込みエリア</span>
+                        </div>
+                    </div>
+                    <div class="company-access__info">
+                        <h3 class="company-access__name">〇〇スポーツクラブ</h3>
+                        <p class="company-access__address">
+                            <i class="fa-solid fa-location-dot"></i>
+                            〒000-0000 東京都〇〇区〇〇 0-0-0
+                        </p>
+                        <p class="company-access__station">
+                            <i class="fa-solid fa-train"></i>
+                            〇〇駅より徒歩10分
+                        </p>
+                        <p class="company-access__parking">
+                            <i class="fa-solid fa-car"></i>
+                            駐車場：10台完備
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせCTA -->
+        <section class="cta section section--primary">
+            <div class="container">
+                <div class="cta__inner">
+                    <h2 class="cta__title">お問い合わせはこちら</h2>
+                    <p class="cta__description">ご質問・ご相談がございましたら、お気軽にお問い合わせください。</p>
+                    <a href="index.html#contact" class="cta__btn">
+                        お問い合わせ <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__logo-area">
+                        <div class="footer__logo">
+                            <a href="index.html">LOGO</a>
+                        </div>
+                        <div class="footer__info">
+                            <p class="footer__address">〒000-0000<br>東京都〇〇区〇〇 0-0-0</p>
+                            <p class="footer__tel"><i class="fa-solid fa-phone"></i> 00-0000-0000</p>
+                        </div>
+                        <div class="footer__sns">
+                            <a href="#" class="footer__sns-link" aria-label="X(Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="footer__sns-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="footer__sns-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="footer__sns-link" aria-label="LINE"><i class="fa-brands fa-line"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer__nav">
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">メニュー</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="index.html">トップ</a></li>
+                                <li><a href="company.html">会社説明</a></li>
+                                <li><a href="#">メンバー紹介</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">コンテンツ</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="project.html">プロジェクト</a></li>
+                                <li><a href="#">パートナーズ</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-column">
+                            <h4 class="footer__nav-title">お問い合わせ</h4>
+                            <ul class="footer__nav-list">
+                                <li><a href="index.html#contact">お問い合わせフォーム</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p class="footer__copyright">&copy; 2026 サイト名｜<a href="#">プライバシーポリシー</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1410 @@
+/* =============================================
+   SONY風デザイン - style-new.css
+   reiga0919様 スポーツチーム公式サイト
+   ============================================= */
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Light header/MV area */
+    --color-white: #ffffff;
+    --color-bg-light: #ffffff;
+    --color-text-dark: #1a1a1a;
+    --color-text-gray: #666666;
+    --color-text-light-gray: #999999;
+    --color-border-light: #e5e5e5;
+
+    /* Dark content sections */
+    --color-bg: #0a0a0f;
+    --color-bg-secondary: #111118;
+    --color-bg-card: #16161f;
+    --color-bg-card-hover: #1c1c28;
+    --color-surface: #1e1e2a;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-hover: rgba(255, 255, 255, 0.15);
+    --color-text: #ffffff;
+    --color-text-secondary: rgba(255, 255, 255, 0.6);
+    --color-text-muted: rgba(255, 255, 255, 0.35);
+    --color-accent: #3b82f6;
+    --color-accent-light: #60a5fa;
+    --color-accent-dark: #2563eb;
+    --color-accent-glow: rgba(59, 130, 246, 0.15);
+
+    /* Footer gradient */
+    --color-footer-start: #0a1628;
+    --color-footer-end: #1a0a2e;
+
+    --font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    --header-height: 72px;
+    --container-width: 1440px;
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(
+        160deg,
+        #081a1a 0%,
+        #0a2235 20%,
+        #0d1f2d 40%,
+        #0b2a2a 60%,
+        #0e1b30 80%,
+        #0a1e25 100%
+    );
+    background-attachment: fixed;
+    color: var(--color-text);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+}
+
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+/* --- Scroll Animation --- */
+.js-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.js-fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   Header（黒ベース）
+   ============================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1100;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: box-shadow var(--transition-base);
+}
+
+.header.is-scrolled {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.header__inner {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo a {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    color: var(--color-white);
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    margin-left: 48px;
+}
+
+.header__nav-list {
+    display: flex;
+    gap: 32px;
+}
+
+.header__nav-item a {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.85);
+    position: relative;
+    padding: 4px 0;
+    transition: color var(--transition-fast);
+}
+
+.header__nav-item a:hover {
+    color: var(--color-white);
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: auto;
+}
+
+/* Hamburger（SONY風 3本線・デスクトップでも表示） */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    gap: 6px;
+    position: relative;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--color-white);
+    transition: all var(--transition-base);
+    border-radius: 1px;
+}
+
+.hamburger.is-active span:first-child {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active span:last-child {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* =============================================
+   Mobile Navigation（上からスライドダウン）
+   ============================================= */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.mobile-nav-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: rgba(15, 15, 25, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1060;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav.is-active {
+    transform: translateY(0);
+}
+
+.mobile-nav__list {
+    width: 100%;
+    max-width: 600px;
+    padding: 32px 60px;
+}
+
+.mobile-nav__item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav__item a {
+    display: block;
+    padding: 18px 0;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--color-text);
+    transition: color var(--transition-fast);
+}
+
+.mobile-nav__item a:hover {
+    color: var(--color-text-secondary);
+}
+
+.mobile-nav__cta {
+    padding: 0 60px 40px;
+}
+
+.mobile-nav__contact-link {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--color-text);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all var(--transition-fast);
+}
+
+.mobile-nav__contact-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+}
+
+/* =============================================
+   Main Visual（スクロール駆動アニメーション）
+   ============================================= */
+.mv {
+    position: relative;
+    width: 100%;
+    height: 300vh;
+    background: transparent;
+}
+
+.mv__sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mv__image-area {
+    position: absolute;
+    top: calc(var(--header-height) + 5vh);
+    left: 10%;
+    right: 10%;
+    bottom: calc(80px + 5vh);
+    overflow: hidden;
+}
+
+.mv__slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mv__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform, opacity;
+}
+
+.mv__slide-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    will-change: transform, opacity;
+}
+
+/* Placeholder Images */
+.mv__image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #888888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.875rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.mv__image-placeholder--02 {
+    background: #666666;
+}
+
+.mv__image-placeholder--03 {
+    background: #444444;
+}
+
+.mv__image-placeholder--04 {
+    background: #2a2a2a;
+}
+
+/* Caption（画像下） */
+.mv__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.mv__caption-text {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Controls（右上） */
+.mv__controls {
+    position: absolute;
+    top: calc(var(--header-height) + 16px);
+    right: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+}
+
+.mv__motion-label {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mv__pause-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.625rem;
+    transition: all var(--transition-fast);
+}
+
+.mv__pause-btn:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--color-white);
+}
+
+/* Progress Bar（右端・縦） */
+.mv__progress {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 10;
+}
+
+.mv__progress-bar {
+    width: 2px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    border-radius: 1px;
+}
+
+.mv__progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: var(--color-white);
+    border-radius: 1px;
+}
+
+.mv__progress-bar.is-active .mv__progress-fill {
+    height: 100%;
+}
+
+.mv__progress-bar.is-past .mv__progress-fill {
+    height: 100%;
+}
+
+/* =============================================
+   Mission Section（SONY風）
+   ============================================= */
+.mission {
+    position: relative;
+    overflow: hidden;
+    padding: 160px 0 180px;
+    min-height: 85vh;
+}
+
+.mission > .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1680px;
+}
+
+/* 背景画像（透過で配置） */
+.mission__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.mission__bg-image {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    transform: translateY(-50%);
+    width: 65%;
+    height: 85%;
+    opacity: 0.35;
+}
+
+.mission__bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* プレースホルダー（画像未設定時） */
+.mission__bg-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.08) 0%,
+        rgba(59, 130, 246, 0.15) 30%,
+        rgba(100, 80, 200, 0.12) 60%,
+        rgba(59, 130, 246, 0.06) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 0.8125rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* コンテンツ */
+.mission__content {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+}
+
+.mission__en {
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--color-text);
+    margin-bottom: 16px;
+}
+
+.mission__label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--color-text-secondary);
+    margin-bottom: 48px;
+}
+
+.mission__title {
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 2;
+    color: var(--color-text);
+    margin-bottom: 56px;
+}
+
+.mission__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.mission__link:hover {
+    color: var(--color-text);
+}
+
+.mission__link-text {
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+}
+
+.mission__link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-size: 0.75rem;
+    transition: all var(--transition-base);
+}
+
+.mission__link:hover .mission__link-icon {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+}
+
+/* =============================================
+   Members Section（SONY風スライダー）
+   ============================================= */
+.members {
+    background: transparent;
+    position: relative;
+}
+
+.members__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* 左カラム：タイトル + ナビ */
+.members__header {
+    padding-top: 8px;
+}
+
+.members__en {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.members__title {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
+    margin-bottom: 48px;
+}
+
+.members__nav {
+    display: flex;
+    gap: 12px;
+}
+
+.members__nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    transition: all var(--transition-base);
+}
+
+.members__nav-btn:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* 右カラム：スライダー */
+.members__slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.members__slider-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.members__slide {
+    flex: 0 0 calc(100% / 3);
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+
+.members__slide-link {
+    display: block;
+}
+
+.members__slide-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.members__slide-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+.members__slide-info {
+    padding: 28px 0 0;
+}
+
+.members__slide-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.members__slide-desc {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+/* プログレスバー */
+.members__progress {
+    position: relative;
+    width: 200px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 32px;
+    border-radius: 1px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.members__progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--color-text);
+    border-radius: 1px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.members__progress-counter {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+    margin-left: 16px;
+    vertical-align: middle;
+}
+
+.placeholder-icon {
+    opacity: 0.3;
+}
+
+/* =============================================
+   News Section（SONY風）
+   ============================================= */
+.news {
+    background: transparent;
+    position: relative;
+}
+
+.news__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+    margin-bottom: 40px;
+}
+
+.news__content {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+}
+
+.news__sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.news__label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--color-text);
+    margin-bottom: 32px;
+}
+
+.news__more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.news__more-btn:hover {
+    color: var(--color-text);
+}
+
+.news__more-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-size: 0.7rem;
+    transition: all var(--transition-fast);
+}
+
+.news__more-btn:hover .news__more-icon {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.news__list {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.news__item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: opacity var(--transition-fast);
+    color: inherit;
+}
+
+.news__item:hover {
+    opacity: 0.7;
+}
+
+.news__item-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.news__item-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.news__item-date {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--color-accent-light);
+}
+
+.news__item-tag {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--color-text-secondary);
+}
+
+.news__item-title {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 6px;
+}
+
+.news__item-desc {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.news__item-icon {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+/* =============================================
+   Contact Section
+   ============================================= */
+.contact {
+    background: transparent;
+    position: relative;
+}
+
+.contact__inner,
+.contact__form-wrapper {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.contact__header {
+    margin-bottom: 56px;
+}
+
+.contact__en {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.contact__title {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.contact__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact__form-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+    color: var(--color-text-secondary);
+}
+
+.contact__required {
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border-radius: 2px;
+}
+
+.contact__form-input,
+.contact__form-select,
+.contact__form-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-text);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    transition: border-color var(--transition-fast);
+    outline: none;
+}
+
+.contact__form-input::placeholder,
+.contact__form-textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+.contact__form-input:focus,
+.contact__form-select:focus,
+.contact__form-textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-glow);
+}
+
+.contact__form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2360a5fa' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+.contact__form-select option {
+    background: var(--color-bg-card);
+    color: var(--color-text);
+}
+
+.contact__form-textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+.contact__form-group--checkbox {
+    padding-top: 4px;
+}
+
+.contact__checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.8125rem;
+}
+
+.contact__form-checkbox {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--color-border-hover);
+    border-radius: 3px;
+    background: var(--color-bg-card);
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+}
+
+.contact__form-checkbox:checked {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.contact__form-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 9px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.contact__checkbox-text {
+    color: var(--color-text-secondary);
+}
+
+.contact__checkbox-text a {
+    color: var(--color-accent-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.contact__checkbox-text a:hover {
+    color: var(--color-accent);
+}
+
+.contact__form-submit {
+    text-align: center;
+    padding-top: 12px;
+}
+
+.contact__submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 16px 56px;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.contact__submit-btn:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+}
+
+.contact__submit-btn i {
+    font-size: 0.75rem;
+    transition: transform var(--transition-fast);
+}
+
+.contact__submit-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* =============================================
+   Footer（黒ベース）
+   ============================================= */
+.footer {
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Bottom Bar */
+.footer__bottom {
+    padding: 40px 0 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__bottom-sns {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.footer__bottom-sns-label {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+}
+
+.footer__bottom-sns-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer__bottom-sns-links a {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    transition: opacity var(--transition-fast);
+}
+
+.footer__bottom-sns-links a:hover {
+    opacity: 0.6;
+}
+
+.footer__bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer__bottom-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer__bottom-links a {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.footer__bottom-links a:hover {
+    color: var(--color-text);
+}
+
+.footer__copyright {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--color-text-muted);
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .section {
+        padding: 80px 0;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__inner {
+        padding: 0 24px;
+    }
+
+    .mission {
+        padding: 120px 0 140px;
+        min-height: 70vh;
+    }
+
+    .mission__bg-image {
+        width: 75%;
+        right: -10%;
+        opacity: 0.25;
+    }
+
+    .mission__en {
+        font-size: 3.5rem;
+    }
+
+    .mission__title {
+        font-size: 1.75rem;
+    }
+
+    .members__container {
+        grid-template-columns: 200px 1fr;
+        gap: 32px;
+        padding: 0 32px;
+    }
+
+    .members__slide {
+        flex: 0 0 50%;
+    }
+
+    .news__content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer__bottom-bar {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 56px;
+    }
+
+    .section {
+        padding: 64px 0;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .mv {
+        height: 250vh;
+    }
+
+    .mv__image-area {
+        left: 5%;
+        right: 5%;
+        bottom: calc(60px + 3vh);
+    }
+
+    .mv__caption {
+        height: 60px;
+    }
+
+    .mv__caption-text {
+        font-size: 0.6875rem;
+        padding: 0 16px;
+        text-align: center;
+    }
+
+    .mv__controls {
+        right: 20px;
+        top: calc(var(--header-height) + 12px);
+    }
+
+    .mv__progress {
+        right: 20px;
+    }
+
+    .mv__progress-bar {
+        height: 28px;
+    }
+
+    .mission {
+        padding: 80px 0 100px;
+        min-height: auto;
+    }
+
+    .mission__bg-image {
+        width: 100%;
+        right: 0;
+        opacity: 0.2;
+    }
+
+    .mission__en {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+
+    .mission__label {
+        margin-bottom: 32px;
+    }
+
+    .mission__title {
+        font-size: 1.375rem;
+        letter-spacing: 0.08em;
+        line-height: 1.9;
+        margin-bottom: 40px;
+    }
+
+    .members__container {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .members__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+    }
+
+    .members__title {
+        margin-bottom: 0;
+    }
+
+    .members__nav {
+        margin-left: auto;
+    }
+
+    .members__slide {
+        flex: 0 0 50%;
+    }
+
+    .news__title {
+        font-size: 1.5rem;
+        margin-bottom: 28px;
+    }
+
+    .news__item-title {
+        font-size: 0.9375rem;
+    }
+
+    .contact__form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__submit-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer__bottom-sns {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .footer__bottom-links {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .mobile-nav__list {
+        padding: 32px 28px;
+    }
+
+    .mobile-nav__item a {
+        font-size: 1.125rem;
+        padding: 20px 0;
+    }
+
+    .mobile-nav__cta {
+        padding: 0 28px 32px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .news__title {
+        font-size: 1.25rem;
+    }
+
+    .news__item-title {
+        font-size: 0.875rem;
+    }
+
+    .news__item-desc {
+        display: none;
+    }
+
+    .members__slide {
+        flex: 0 0 100%;
+        padding-right: 0;
+    }
+
+}
