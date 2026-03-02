@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="パートナー企業・協賛企業のご紹介">
-    <title>パートナーズ | サイト名</title>
+    <meta name="description" content="パートナーズ - スポーツチーム公式サイト">
+    <title>サイト名 | パートナーズ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-new.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -16,28 +16,24 @@
     <header class="header">
         <div class="header__inner">
             <div class="header__logo">
-                <a href="index.html">LOGO</a>
+                <a href="index-new.html">LOGO</a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="index.html">トップ</a></li>
+                    <li class="header__nav-item"><a href="index-new.html">トップ</a></li>
                     <li class="header__nav-item"><a href="company.html">会社説明</a></li>
-                    <li class="header__nav-item"><a href="members.html">メンバー紹介</a></li>
+                    <li class="header__nav-item"><a href="#">メンバー紹介</a></li>
                     <li class="header__nav-item"><a href="project.html">プロジェクト</a></li>
                     <li class="header__nav-item"><a href="partners.html">パートナーズ</a></li>
                 </ul>
             </nav>
-            <div class="header__cta">
-                <a href="index.html#contact" class="btn btn--primary">
-                    <i class="fa-regular fa-envelope"></i>
-                    お問い合わせ
-                </a>
+            <div class="header__actions">
+                <button class="hamburger" type="button" aria-label="メニューを開く">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <button class="hamburger" type="button" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
 
@@ -47,233 +43,209 @@
     <!-- モバイルナビゲーション -->
     <nav class="mobile-nav">
         <ul class="mobile-nav__list">
-            <li class="mobile-nav__item"><a href="index.html">トップ</a></li>
+            <li class="mobile-nav__item"><a href="index-new.html">トップ</a></li>
             <li class="mobile-nav__item"><a href="company.html">会社説明</a></li>
-            <li class="mobile-nav__item"><a href="members.html">メンバー紹介</a></li>
+            <li class="mobile-nav__item"><a href="#">メンバー紹介</a></li>
             <li class="mobile-nav__item"><a href="project.html">プロジェクト</a></li>
             <li class="mobile-nav__item"><a href="partners.html">パートナーズ</a></li>
         </ul>
         <div class="mobile-nav__cta">
-            <a href="index.html#contact" class="btn btn--primary">
-                <i class="fa-regular fa-envelope"></i>
-                お問い合わせ
-            </a>
+            <a href="index-new.html#contact" class="mobile-nav__contact-link">お問い合わせ</a>
         </div>
     </nav>
 
-    <!-- ページヘッダー -->
-    <section class="page-header">
-        <div class="container">
-            <div class="page-header__content">
-                <p class="page-header__label"><span class="page-header__label-dot"></span>Partners</p>
-                <h1 class="page-header__title">パートナーズ</h1>
-                <p class="page-header__description">私たちの活動を支えてくださるパートナー企業をご紹介します。</p>
+    <!-- ページヒーロー -->
+    <section class="page-hero">
+        <div class="page-hero__bg">
+            <div class="page-hero__bg-image">
+                <div class="page-hero__bg-placeholder">
+                    <span>ヒーロー背景画像<br>1920 x 600</span>
+                </div>
             </div>
         </div>
-        <div class="page-header__bg"></div>
+        <div class="container">
+            <p class="page-hero__en">Partners</p>
+            <h1 class="page-hero__title">パートナーズ</h1>
+        </div>
     </section>
 
     <!-- メインコンテンツ -->
     <main>
-        <!-- パートナー紹介文 -->
+        <!-- パートナーズ紹介セクション -->
         <section class="partners-intro section">
             <div class="container">
                 <div class="partners-intro__content">
                     <p class="partners-intro__text">
-                        私たちのチームは、多くのパートナー企業様のご支援により活動を続けることができています。<br>
-                        スポーツを通じた地域貢献、次世代育成という理念に共感いただき、<br>
-                        ともに歩んでくださるパートナー企業様に心より感謝申し上げます。
+                        私たちの活動は、多くのパートナー企業の皆様のご支援によって支えられています。<br>
+                        スポーツを通じた地域社会の発展に、ともに取り組んでくださるパートナーの皆様をご紹介いたします。
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- ゴールドパートナー -->
-        <section class="partners-section section section--gray">
+        <!-- プラチナパートナー -->
+        <section class="partners-rank section">
             <div class="container">
-                <div class="partners-section__header">
-                    <h2 class="partners-section__title">
-                        <span class="partners-section__rank partners-section__rank--gold">Gold</span>
-                        ゴールドパートナー
-                    </h2>
+                <div class="partners-rank__header">
+                    <p class="partners-rank__en">Platinum</p>
+                    <h2 class="partners-rank__subtitle">プラチナパートナー</h2>
                 </div>
-                <div class="partners-section__grid partners-section__grid--gold">
-                    <a href="#" class="partner-logo partner-logo--gold" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                <div class="partners-rank__grid partners-rank__grid--platinum">
+                    <a href="#" class="partner-logo partner-logo--platinum">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ A</span>
                         </div>
-                        <p class="partner-logo__name">株式会社〇〇</p>
                     </a>
-                    <a href="#" class="partner-logo partner-logo--gold" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                    <a href="#" class="partner-logo partner-logo--platinum">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ B</span>
                         </div>
-                        <p class="partner-logo__name">△△株式会社</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ゴールドパートナー -->
+        <section class="partners-rank section">
+            <div class="container">
+                <div class="partners-rank__header">
+                    <p class="partners-rank__en">Gold</p>
+                    <h2 class="partners-rank__subtitle">ゴールドパートナー</h2>
+                </div>
+                <div class="partners-rank__grid partners-rank__grid--gold">
+                    <a href="#" class="partner-logo partner-logo--gold">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ C</span>
+                        </div>
+                    </a>
+                    <a href="#" class="partner-logo partner-logo--gold">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ D</span>
+                        </div>
+                    </a>
+                    <a href="#" class="partner-logo partner-logo--gold">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ E</span>
+                        </div>
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- シルバーパートナー -->
-        <section class="partners-section section">
+        <section class="partners-rank section">
             <div class="container">
-                <div class="partners-section__header">
-                    <h2 class="partners-section__title">
-                        <span class="partners-section__rank partners-section__rank--silver">Silver</span>
-                        シルバーパートナー
-                    </h2>
+                <div class="partners-rank__header">
+                    <p class="partners-rank__en">Silver</p>
+                    <h2 class="partners-rank__subtitle">シルバーパートナー</h2>
                 </div>
-                <div class="partners-section__grid partners-section__grid--silver">
-                    <a href="#" class="partner-logo partner-logo--silver" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                <div class="partners-rank__grid partners-rank__grid--silver">
+                    <a href="#" class="partner-logo partner-logo--silver">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ F</span>
                         </div>
-                        <p class="partner-logo__name">□□株式会社</p>
                     </a>
-                    <a href="#" class="partner-logo partner-logo--silver" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                    <a href="#" class="partner-logo partner-logo--silver">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ G</span>
                         </div>
-                        <p class="partner-logo__name">株式会社◇◇</p>
                     </a>
-                    <a href="#" class="partner-logo partner-logo--silver" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                    <a href="#" class="partner-logo partner-logo--silver">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ H</span>
                         </div>
-                        <p class="partner-logo__name">××株式会社</p>
+                    </a>
+                    <a href="#" class="partner-logo partner-logo--silver">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ I</span>
+                        </div>
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- ブロンズパートナー -->
-        <section class="partners-section section section--gray">
+        <section class="partners-rank section">
             <div class="container">
-                <div class="partners-section__header">
-                    <h2 class="partners-section__title">
-                        <span class="partners-section__rank partners-section__rank--bronze">Bronze</span>
-                        ブロンズパートナー
-                    </h2>
+                <div class="partners-rank__header">
+                    <p class="partners-rank__en">Bronze</p>
+                    <h2 class="partners-rank__subtitle">ブロンズパートナー</h2>
                 </div>
-                <div class="partners-section__grid partners-section__grid--bronze">
-                    <a href="#" class="partner-logo partner-logo--bronze" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                <div class="partners-rank__grid partners-rank__grid--bronze">
+                    <a href="#" class="partner-logo partner-logo--bronze">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ J</span>
                         </div>
-                        <p class="partner-logo__name">株式会社AA</p>
                     </a>
-                    <a href="#" class="partner-logo partner-logo--bronze" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                    <a href="#" class="partner-logo partner-logo--bronze">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ K</span>
                         </div>
-                        <p class="partner-logo__name">BB株式会社</p>
                     </a>
-                    <a href="#" class="partner-logo partner-logo--bronze" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                    <a href="#" class="partner-logo partner-logo--bronze">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ L</span>
                         </div>
-                        <p class="partner-logo__name">株式会社CC</p>
                     </a>
-                    <a href="#" class="partner-logo partner-logo--bronze" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                    <a href="#" class="partner-logo partner-logo--bronze">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ M</span>
                         </div>
-                        <p class="partner-logo__name">DD株式会社</p>
                     </a>
-                    <a href="#" class="partner-logo partner-logo--bronze" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                    <a href="#" class="partner-logo partner-logo--bronze">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ N</span>
                         </div>
-                        <p class="partner-logo__name">株式会社EE</p>
                     </a>
-                    <a href="#" class="partner-logo partner-logo--bronze" target="_blank" rel="noopener noreferrer">
-                        <div class="partner-logo__image-placeholder">
-                            <i class="fa-solid fa-building"></i>
-                            <span>企業ロゴ</span>
+                    <a href="#" class="partner-logo partner-logo--bronze">
+                        <div class="partner-logo__placeholder">
+                            <span>企業ロゴ O</span>
                         </div>
-                        <p class="partner-logo__name">FF株式会社</p>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- パートナー募集CTA -->
-        <section class="cta section section--primary">
-            <div class="container">
-                <div class="cta__inner">
-                    <h2 class="cta__title">パートナー企業を募集しています</h2>
-                    <p class="cta__description">私たちと一緒にスポーツを通じた地域貢献に取り組みませんか？<br>協賛・スポンサーシップについてのお問い合わせはこちらから。</p>
-                    <a href="index.html#contact" class="cta__btn">
-                        お問い合わせ <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
+        <!-- パートナー募集セクション -->
+        <section class="partners-cta section">
+            <div class="partners-cta__inner">
+                <h2 class="partners-cta__title">パートナー企業を<br class="sp-only">募集しています</h2>
+                <p class="partners-cta__text">
+                    私たちとともに、スポーツを通じた地域社会の発展に取り組みませんか。<br>
+                    パートナーシップに関するお問い合わせは、下記よりご連絡ください。
+                </p>
+                <a href="index-new.html#contact" class="partners-cta__btn">
+                    お問い合わせはこちら
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </section>
     </main>
 
     <!-- フッター -->
     <footer class="footer">
-        <div class="footer__main">
-            <div class="container">
-                <div class="footer__inner">
-                    <div class="footer__logo-area">
-                        <div class="footer__logo">
-                            <a href="index.html">LOGO</a>
-                        </div>
-                        <div class="footer__info">
-                            <p class="footer__address">〒000-0000<br>東京都〇〇区〇〇 0-0-0</p>
-                            <p class="footer__tel"><i class="fa-solid fa-phone"></i> 00-0000-0000</p>
-                        </div>
-                        <div class="footer__sns">
-                            <a href="#" class="footer__sns-link" aria-label="X(Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#" class="footer__sns-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="footer__sns-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" class="footer__sns-link" aria-label="LINE"><i class="fa-brands fa-line"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer__nav">
-                        <div class="footer__nav-column">
-                            <h4 class="footer__nav-title">メニュー</h4>
-                            <ul class="footer__nav-list">
-                                <li><a href="index.html">トップ</a></li>
-                                <li><a href="company.html">会社説明</a></li>
-                                <li><a href="members.html">メンバー紹介</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__nav-column">
-                            <h4 class="footer__nav-title">コンテンツ</h4>
-                            <ul class="footer__nav-list">
-                                <li><a href="project.html">プロジェクト</a></li>
-                                <li><a href="partners.html">パートナーズ</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__nav-column">
-                            <h4 class="footer__nav-title">お問い合わせ</h4>
-                            <ul class="footer__nav-list">
-                                <li><a href="index.html#contact">お問い合わせフォーム</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="footer__bottom">
             <div class="container">
-                <p class="footer__copyright">&copy; 2026 サイト名｜<a href="#">プライバシーポリシー</a></p>
+                <div class="footer__bottom-sns">
+                    <span class="footer__bottom-sns-label">公式SNSアカウント</span>
+                    <div class="footer__bottom-sns-links">
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="X(Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer__bottom-bar">
+                    <div class="footer__bottom-links">
+                        <a href="#">ご利用条件</a>
+                        <a href="#">プライバシーポリシー</a>
+                        <a href="#">このサイトについて</a>
+                    </div>
+                    <p class="footer__copyright">&copy; 2026 サイト名</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main-new.js"></script>
 </body>
 </html>

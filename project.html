@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="私たちのプロジェクトや活動内容についてご紹介します。">
-    <title>プロジェクト | サイト名</title>
+    <meta name="description" content="プロジェクト紹介 - スポーツチーム公式サイト">
+    <title>サイト名 | プロジェクト</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-new.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -16,28 +16,24 @@
     <header class="header">
         <div class="header__inner">
             <div class="header__logo">
-                <a href="index.html">LOGO</a>
+                <a href="index-new.html">LOGO</a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="index.html">トップ</a></li>
+                    <li class="header__nav-item"><a href="index-new.html">トップ</a></li>
                     <li class="header__nav-item"><a href="company.html">会社説明</a></li>
                     <li class="header__nav-item"><a href="#">メンバー紹介</a></li>
                     <li class="header__nav-item"><a href="project.html">プロジェクト</a></li>
-                    <li class="header__nav-item"><a href="#">パートナーズ</a></li>
+                    <li class="header__nav-item"><a href="partners.html">パートナーズ</a></li>
                 </ul>
             </nav>
-            <div class="header__cta">
-                <a href="index.html#contact" class="btn btn--primary">
-                    <i class="fa-regular fa-envelope"></i>
-                    お問い合わせ
-                </a>
+            <div class="header__actions">
+                <button class="hamburger" type="button" aria-label="メニューを開く">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <button class="hamburger" type="button" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
 
@@ -47,235 +43,151 @@
     <!-- モバイルナビゲーション -->
     <nav class="mobile-nav">
         <ul class="mobile-nav__list">
-            <li class="mobile-nav__item"><a href="index.html">トップ</a></li>
+            <li class="mobile-nav__item"><a href="index-new.html">トップ</a></li>
             <li class="mobile-nav__item"><a href="company.html">会社説明</a></li>
             <li class="mobile-nav__item"><a href="#">メンバー紹介</a></li>
             <li class="mobile-nav__item"><a href="project.html">プロジェクト</a></li>
-            <li class="mobile-nav__item"><a href="#">パートナーズ</a></li>
+            <li class="mobile-nav__item"><a href="partners.html">パートナーズ</a></li>
         </ul>
         <div class="mobile-nav__cta">
-            <a href="index.html#contact" class="btn btn--primary">
-                <i class="fa-regular fa-envelope"></i>
-                お問い合わせ
-            </a>
+            <a href="index-new.html#contact" class="mobile-nav__contact-link">お問い合わせ</a>
         </div>
     </nav>
 
-    <!-- ページヘッダー -->
-    <section class="page-header">
-        <div class="container">
-            <div class="page-header__content">
-                <p class="page-header__label"><span class="page-header__label-dot"></span>Project</p>
-                <h1 class="page-header__title">プロジェクト</h1>
-                <p class="page-header__description">私たちの活動とプロジェクトをご紹介します。</p>
+    <!-- ページヒーロー -->
+    <section class="page-hero">
+        <div class="page-hero__bg">
+            <div class="page-hero__bg-image">
+                <div class="page-hero__bg-placeholder">
+                    <span>ヒーロー背景画像<br>1920 x 600</span>
+                </div>
             </div>
         </div>
-        <div class="page-header__bg"></div>
+        <div class="container">
+            <p class="page-hero__en">Project</p>
+            <h1 class="page-hero__title">プロジェクト</h1>
+        </div>
     </section>
 
     <!-- メインコンテンツ -->
     <main>
-        <!-- プロジェクト概要 -->
+        <!-- プロジェクト概要セクション -->
         <section class="project-overview section">
             <div class="container">
-                <div class="project-overview__inner">
+                <div class="project-overview__header">
+                    <p class="project-overview__en">Overview</p>
+                    <h2 class="project-overview__subtitle">プロジェクト概要</h2>
+                </div>
+                <div class="project-overview__grid">
                     <div class="project-overview__content">
-                        <p class="project-overview__label"><span class="project-overview__label-dot"></span>Our Activities</p>
-                        <h2 class="project-overview__title">
-                            スポーツの力で<br>
-                            地域を元気に
-                        </h2>
-                        <p class="project-overview__description">
-                            私たちは単なるスポーツチームではありません。<br>
-                            地域社会との連携を大切にし、スポーツを通じた<br>
-                            様々な社会貢献活動に取り組んでいます。<br><br>
-                            子どもたちへのスポーツ教室、地域イベントへの参加、<br>
-                            チャリティ活動など、多岐にわたるプロジェクトを展開しています。
+                        <h3 class="project-overview__heading">地域とスポーツの<br>新しい関係を築く</h3>
+                        <p class="project-overview__text">
+                            私たちのプロジェクトは、スポーツを通じて地域社会に新しい価値を創造することを目指しています。
+                            競技としてのスポーツだけでなく、教育・健康・コミュニティづくりなど、
+                            多角的なアプローチで地域に根ざした活動を展開しています。
+                        </p>
+                        <p class="project-overview__text">
+                            チーム設立以来、多くの地域住民やパートナー企業の支援を受けながら、
+                            持続可能なスポーツエコシステムの構築に取り組んでいます。
                         </p>
                     </div>
                     <div class="project-overview__image">
                         <div class="project-overview__image-placeholder">
-                            <svg class="placeholder-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
-                            <span>プロジェクト画像<br>600 x 400</span>
+                            <span>プロジェクト画像<br>800 x 600</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- プロジェクト一覧 -->
-        <section class="project-list section section--gray">
+        <!-- 活動内容セクション -->
+        <section class="project-activities section">
             <div class="container">
-                <div class="project-list__header">
-                    <p class="project-list__label"><span class="project-list__label-dot"></span>Projects</p>
-                    <h2 class="project-list__title">主なプロジェクト</h2>
+                <div class="project-activities__header">
+                    <p class="project-activities__en">Activities</p>
+                    <h2 class="project-activities__subtitle">活動内容</h2>
                 </div>
-                <div class="project-list__grid">
-                    <article class="project-list__card">
-                        <div class="project-list__card-image">
-                            <div class="project-list__image-placeholder">
-                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                </svg>
-                                <span>プロジェクト画像<br>800 x 450</span>
+                <div class="project-activities__list">
+                    <!-- 活動1 -->
+                    <div class="project-activity">
+                        <div class="project-activity__image">
+                            <div class="project-activity__image-placeholder">
+                                <span>活動画像 1<br>800 x 500</span>
                             </div>
-                            <span class="project-list__card-tag">スポーツ教室</span>
                         </div>
-                        <div class="project-list__card-content">
-                            <h3 class="project-list__card-title">ジュニアスポーツアカデミー</h3>
-                            <p class="project-list__card-text">
-                                地域の小中学生を対象としたスポーツ教室を定期開催。プロ選手による直接指導で、子どもたちの技術向上と健全な心身の発達をサポートしています。
+                        <div class="project-activity__content">
+                            <span class="project-activity__number">01</span>
+                            <h3 class="project-activity__title">ユースアカデミー運営</h3>
+                            <p class="project-activity__text">
+                                地域の子どもたちを対象としたスポーツアカデミーを運営。
+                                技術指導だけでなく、チームワークやリーダーシップなど、
+                                スポーツを通じた人間形成にも力を入れています。
+                                毎週末、地域の施設を利用して定期的なトレーニングを実施しています。
                             </p>
                         </div>
-                    </article>
-                    <article class="project-list__card">
-                        <div class="project-list__card-image">
-                            <div class="project-list__image-placeholder">
-                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                </svg>
-                                <span>プロジェクト画像<br>800 x 450</span>
+                    </div>
+                    <!-- 活動2 -->
+                    <div class="project-activity project-activity--reverse">
+                        <div class="project-activity__image">
+                            <div class="project-activity__image-placeholder">
+                                <span>活動画像 2<br>800 x 500</span>
                             </div>
-                            <span class="project-list__card-tag">地域貢献</span>
                         </div>
-                        <div class="project-list__card-content">
-                            <h3 class="project-list__card-title">地域クリーンアップ活動</h3>
-                            <p class="project-list__card-text">
-                                月に1回、チームメンバーとファンが一緒になって地域の清掃活動を実施。スポーツを通じた地域コミュニティの活性化に貢献しています。
+                        <div class="project-activity__content">
+                            <span class="project-activity__number">02</span>
+                            <h3 class="project-activity__title">地域コミュニティイベント</h3>
+                            <p class="project-activity__text">
+                                スポーツフェスティバルや交流試合、健康教室など、
+                                地域住民が気軽に参加できるイベントを定期開催。
+                                世代を超えた交流の場を提供し、スポーツを通じたコミュニティの活性化を推進しています。
                             </p>
                         </div>
-                    </article>
-                    <article class="project-list__card">
-                        <div class="project-list__card-image">
-                            <div class="project-list__image-placeholder">
-                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                </svg>
-                                <span>プロジェクト画像<br>800 x 450</span>
+                    </div>
+                    <!-- 活動3 -->
+                    <div class="project-activity">
+                        <div class="project-activity__image">
+                            <div class="project-activity__image-placeholder">
+                                <span>活動画像 3<br>800 x 500</span>
                             </div>
-                            <span class="project-list__card-tag">チャリティ</span>
                         </div>
-                        <div class="project-list__card-content">
-                            <h3 class="project-list__card-title">チャリティマッチ</h3>
-                            <p class="project-list__card-text">
-                                年に数回、チャリティマッチを開催。試合の収益は地域の福祉施設や子ども支援団体に寄付し、スポーツを通じた社会貢献を実践しています。
+                        <div class="project-activity__content">
+                            <span class="project-activity__number">03</span>
+                            <h3 class="project-activity__title">社会貢献プログラム</h3>
+                            <p class="project-activity__text">
+                                スポーツの力を活用した社会貢献活動に積極的に取り組んでいます。
+                                障がい者スポーツ支援、環境保全活動、被災地支援など、
+                                チームとして社会に還元できる活動を幅広く展開しています。
                             </p>
-                        </div>
-                    </article>
-                    <article class="project-list__card">
-                        <div class="project-list__card-image">
-                            <div class="project-list__image-placeholder">
-                                <svg class="placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                </svg>
-                                <span>プロジェクト画像<br>800 x 450</span>
-                            </div>
-                            <span class="project-list__card-tag">健康促進</span>
-                        </div>
-                        <div class="project-list__card-content">
-                            <h3 class="project-list__card-title">シニアスポーツ教室</h3>
-                            <p class="project-list__card-text">
-                                高齢者の健康維持・増進を目的としたスポーツ教室を開催。無理のない運動プログラムで、楽しみながら健康づくりをサポートしています。
-                            </p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ギャラリー -->
-        <section class="project-gallery section section--gray">
-            <div class="container">
-                <div class="project-gallery__header">
-                    <p class="project-gallery__label"><span class="project-gallery__label-dot"></span>Gallery</p>
-                    <h2 class="project-gallery__title">活動フォト</h2>
-                </div>
-                <div class="project-gallery__grid">
-                    <div class="project-gallery__item">
-                        <div class="project-gallery__image-placeholder">
-                            <svg class="placeholder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
-                            <span>ギャラリー画像 1</span>
-                        </div>
-                    </div>
-                    <div class="project-gallery__item">
-                        <div class="project-gallery__image-placeholder">
-                            <svg class="placeholder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
-                            <span>ギャラリー画像 2</span>
-                        </div>
-                    </div>
-                    <div class="project-gallery__item">
-                        <div class="project-gallery__image-placeholder">
-                            <svg class="placeholder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
-                            <span>ギャラリー画像 3</span>
-                        </div>
-                    </div>
-                    <div class="project-gallery__item">
-                        <div class="project-gallery__image-placeholder">
-                            <svg class="placeholder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
-                            <span>ギャラリー画像 4</span>
-                        </div>
-                    </div>
-                    <div class="project-gallery__item">
-                        <div class="project-gallery__image-placeholder">
-                            <svg class="placeholder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
-                            <span>ギャラリー画像 5</span>
-                        </div>
-                    </div>
-                    <div class="project-gallery__item">
-                        <div class="project-gallery__image-placeholder">
-                            <svg class="placeholder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
-                            <span>ギャラリー画像 6</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- お問い合わせCTA -->
-        <section class="cta section section--primary">
+        <!-- 実績セクション -->
+        <section class="project-results section">
             <div class="container">
-                <div class="cta__inner">
-                    <h2 class="cta__title">プロジェクトへの参加・協賛について</h2>
-                    <p class="cta__description">活動へのご参加やスポンサーシップについてのお問い合わせはこちらから。</p>
-                    <a href="index.html#contact" class="cta__btn">
-                        お問い合わせ <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                <div class="project-results__header">
+                    <p class="project-results__en">Results</p>
+                    <h2 class="project-results__subtitle">実績・成果</h2>
+                </div>
+                <div class="project-results__grid">
+                    <div class="project-result-card">
+                        <span class="project-result-card__number">500+</span>
+                        <p class="project-result-card__label">アカデミー参加者数</p>
+                    </div>
+                    <div class="project-result-card">
+                        <span class="project-result-card__number">30+</span>
+                        <p class="project-result-card__label">年間イベント開催数</p>
+                    </div>
+                    <div class="project-result-card">
+                        <span class="project-result-card__number">10+</span>
+                        <p class="project-result-card__label">連携自治体数</p>
+                    </div>
+                    <div class="project-result-card">
+                        <span class="project-result-card__number">50+</span>
+                        <p class="project-result-card__label">パートナー企業数</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -283,57 +195,28 @@
 
     <!-- フッター -->
     <footer class="footer">
-        <div class="footer__main">
-            <div class="container">
-                <div class="footer__inner">
-                    <div class="footer__logo-area">
-                        <div class="footer__logo">
-                            <a href="index.html">LOGO</a>
-                        </div>
-                        <div class="footer__info">
-                            <p class="footer__address">〒000-0000<br>東京都〇〇区〇〇 0-0-0</p>
-                            <p class="footer__tel"><i class="fa-solid fa-phone"></i> 00-0000-0000</p>
-                        </div>
-                        <div class="footer__sns">
-                            <a href="#" class="footer__sns-link" aria-label="X(Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#" class="footer__sns-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="footer__sns-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" class="footer__sns-link" aria-label="LINE"><i class="fa-brands fa-line"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer__nav">
-                        <div class="footer__nav-column">
-                            <h4 class="footer__nav-title">メニュー</h4>
-                            <ul class="footer__nav-list">
-                                <li><a href="index.html">トップ</a></li>
-                                <li><a href="company.html">会社説明</a></li>
-                                <li><a href="#">メンバー紹介</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__nav-column">
-                            <h4 class="footer__nav-title">コンテンツ</h4>
-                            <ul class="footer__nav-list">
-                                <li><a href="project.html">プロジェクト</a></li>
-                                <li><a href="#">パートナーズ</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__nav-column">
-                            <h4 class="footer__nav-title">お問い合わせ</h4>
-                            <ul class="footer__nav-list">
-                                <li><a href="index.html#contact">お問い合わせフォーム</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="footer__bottom">
             <div class="container">
-                <p class="footer__copyright">&copy; 2026 サイト名｜<a href="#">プライバシーポリシー</a></p>
+                <div class="footer__bottom-sns">
+                    <span class="footer__bottom-sns-label">公式SNSアカウント</span>
+                    <div class="footer__bottom-sns-links">
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="X(Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer__bottom-bar">
+                    <div class="footer__bottom-links">
+                        <a href="#">ご利用条件</a>
+                        <a href="#">プライバシーポリシー</a>
+                        <a href="#">このサイトについて</a>
+                    </div>
+                    <p class="footer__copyright">&copy; 2026 サイト名</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main-new.js"></script>
 </body>
 </html>
