@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
        スクロールアニメーション（コンテンツセクション）
        ----------------------------------------- */
     var fadeTargets = document.querySelectorAll(
-        '.mission__content, .news__title, .news__content, .members__header, .members__slider, .contact__header, .contact__form, .company-vision__header, .company-vision__grid, .company-business__header, .company-business__grid, .company-info__header, .company-table, .project-overview__header, .project-overview__grid, .project-activities__header, .project-activity, .project-results__header, .project-results__grid, .partners-intro__content, .partners-rank__header, .partners-rank__grid, .partners-cta__inner'
+        '.mission__content, .news__title, .news__content, .members__header, .members__slider, .contact__header, .contact__form, .company-vision__header, .company-vision__grid, .company-business__header, .company-business__grid, .company-info__header, .company-table, .project-activities__header, .project-activities__sticky-wrap, .partners-intro__content, .partners-rank__header, .partners-rank__grid, .partners-cta__inner'
     );
 
     fadeTargets.forEach(function (el) {
@@ -405,6 +405,47 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         fadeTargets.forEach(function (el) {
             el.classList.add('is-visible');
+        });
+    }
+
+    /* -----------------------------------------
+       プロジェクトページ: スティッキー画像切替
+       ----------------------------------------- */
+    var activityItems = document.querySelectorAll('.project-activities__text-col .project-activity');
+    var activitySlides = document.querySelectorAll('.project-activities__slide');
+
+    if (activityItems.length > 0 && activitySlides.length > 0) {
+        // 初期状態: 最初のアイテムをアクティブに
+        activityItems[0].classList.add('is-active');
+
+        var activityObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var idx = entry.target.getAttribute('data-index');
+
+                    // テキストのアクティブ切替
+                    activityItems.forEach(function (item) {
+                        item.classList.remove('is-active');
+                    });
+                    entry.target.classList.add('is-active');
+
+                    // 画像のクロスフェード切替
+                    activitySlides.forEach(function (slide) {
+                        slide.classList.remove('is-active');
+                    });
+                    var targetSlide = document.querySelector('.project-activities__slide[data-index="' + idx + '"]');
+                    if (targetSlide) {
+                        targetSlide.classList.add('is-active');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.4,
+            rootMargin: '-20% 0px -40% 0px'
+        });
+
+        activityItems.forEach(function (item) {
+            activityObserver.observe(item);
         });
     }
 

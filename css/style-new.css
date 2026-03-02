@@ -1472,7 +1472,7 @@ input, select, textarea {
 }
 
 /* =============================================
-   Project Activities Section
+   Project Activities Section (Sticky Scroll)
    ============================================= */
 .project-activities__header {
     margin-bottom: 56px;
@@ -1494,30 +1494,47 @@ input, select, textarea {
     color: var(--color-text-secondary);
 }
 
-.project-activities__list {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-}
-
-.project-activity {
+.project-activities__sticky-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: center;
 }
 
-.project-activity--reverse {
-    direction: rtl;
+/* 左カラム: スティッキー画像 */
+.project-activities__image-col {
+    position: relative;
 }
 
-.project-activity--reverse > * {
-    direction: ltr;
+.project-activities__image-sticky {
+    position: sticky;
+    top: calc(var(--header-height) + 40px);
 }
 
-.project-activity__image-placeholder {
+.project-activities__image-frame {
+    position: relative;
     width: 100%;
-    aspect-ratio: 8 / 5;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.project-activities__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-activities__slide.is-active {
+    opacity: 1;
+}
+
+.project-activities__slide-placeholder {
+    width: 100%;
+    height: 100%;
     background: var(--color-surface);
     display: flex;
     align-items: center;
@@ -1526,7 +1543,36 @@ input, select, textarea {
     font-size: 0.8125rem;
     text-align: center;
     line-height: 1.6;
-    border-radius: 2px;
+}
+
+/* 右カラム: スクロールテキスト */
+.project-activities__text-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-activity {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--color-border);
+    opacity: 0.35;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-activity:first-child {
+    padding-top: 0;
+}
+
+/* SP用画像: PCでは非表示 */
+.project-activity__image-sp {
+    display: none;
+}
+
+.project-activity:last-child {
+    border-bottom: none;
+}
+
+.project-activity.is-active {
+    opacity: 1;
 }
 
 .project-activity__number {
@@ -1551,60 +1597,6 @@ input, select, textarea {
     font-size: 0.9375rem;
     font-weight: 400;
     line-height: 2;
-    color: var(--color-text-secondary);
-}
-
-/* =============================================
-   Project Results Section
-   ============================================= */
-.project-results__header {
-    margin-bottom: 56px;
-}
-
-.project-results__en {
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: var(--color-text);
-    margin-bottom: 12px;
-}
-
-.project-results__subtitle {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    color: var(--color-text-secondary);
-}
-
-.project-results__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.project-result-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    padding: 48px 24px;
-    text-align: center;
-}
-
-.project-result-card__number {
-    display: block;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    color: var(--color-accent-light);
-    margin-bottom: 12px;
-    line-height: 1.1;
-}
-
-.project-result-card__label {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
     color: var(--color-text-secondary);
 }
 
@@ -1833,12 +1825,8 @@ input, select, textarea {
         gap: 40px;
     }
 
-    .project-activity {
+    .project-activities__sticky-wrap {
         gap: 40px;
-    }
-
-    .project-results__grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     /* Partners page - Tablet */
@@ -2037,21 +2025,31 @@ input, select, textarea {
         gap: 32px;
     }
 
+    .project-activities__sticky-wrap {
+        display: block;
+    }
+
+    .project-activities__image-col {
+        display: none;
+    }
+
     .project-activity {
-        grid-template-columns: 1fr;
-        gap: 24px;
+        padding: 32px 0;
+        opacity: 1;
     }
 
-    .project-activity--reverse {
-        direction: ltr;
+    .project-activity:first-child {
+        padding-top: 0;
     }
 
-    .project-activities__list {
-        gap: 56px;
+    .project-activity__image-sp {
+        display: block;
+        margin-bottom: 24px;
     }
 
-    .project-results__grid {
-        grid-template-columns: repeat(2, 1fr);
+    .project-activity__image-sp .project-activities__slide-placeholder {
+        aspect-ratio: 4 / 3;
+        border-radius: 2px;
     }
 
     /* Partners page - Mobile */

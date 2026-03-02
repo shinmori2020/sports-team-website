@@ -71,51 +71,52 @@
 
     <!-- メインコンテンツ -->
     <main>
-        <!-- プロジェクト概要セクション -->
-        <section class="project-overview section">
-            <div class="container">
-                <div class="project-overview__header">
-                    <p class="project-overview__en">Overview</p>
-                    <h2 class="project-overview__subtitle">プロジェクト概要</h2>
-                </div>
-                <div class="project-overview__grid">
-                    <div class="project-overview__content">
-                        <h3 class="project-overview__heading">地域とスポーツの<br>新しい関係を築く</h3>
-                        <p class="project-overview__text">
-                            私たちのプロジェクトは、スポーツを通じて地域社会に新しい価値を創造することを目指しています。
-                            競技としてのスポーツだけでなく、教育・健康・コミュニティづくりなど、
-                            多角的なアプローチで地域に根ざした活動を展開しています。
-                        </p>
-                        <p class="project-overview__text">
-                            チーム設立以来、多くの地域住民やパートナー企業の支援を受けながら、
-                            持続可能なスポーツエコシステムの構築に取り組んでいます。
-                        </p>
-                    </div>
-                    <div class="project-overview__image">
-                        <div class="project-overview__image-placeholder">
-                            <span>プロジェクト画像<br>800 x 600</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 活動内容セクション -->
+        <!-- 活動内容セクション（スティッキー画像＋スクロールテキスト） -->
         <section class="project-activities section">
             <div class="container">
                 <div class="project-activities__header">
                     <p class="project-activities__en">Activities</p>
                     <h2 class="project-activities__subtitle">活動内容</h2>
                 </div>
-                <div class="project-activities__list">
-                    <!-- 活動1 -->
-                    <div class="project-activity">
-                        <div class="project-activity__image">
-                            <div class="project-activity__image-placeholder">
-                                <span>活動画像 1<br>800 x 500</span>
+                <div class="project-activities__sticky-wrap">
+                    <!-- 左: スティッキー画像エリア -->
+                    <div class="project-activities__image-col">
+                        <div class="project-activities__image-sticky">
+                            <div class="project-activities__image-frame">
+                                <div class="project-activities__slide is-active" data-index="0">
+                                    <div class="project-activities__slide-placeholder">
+                                        <span>活動画像 1<br>800 x 600</span>
+                                    </div>
+                                </div>
+                                <div class="project-activities__slide" data-index="1">
+                                    <div class="project-activities__slide-placeholder">
+                                        <span>活動画像 2<br>800 x 600</span>
+                                    </div>
+                                </div>
+                                <div class="project-activities__slide" data-index="2">
+                                    <div class="project-activities__slide-placeholder">
+                                        <span>活動画像 3<br>800 x 600</span>
+                                    </div>
+                                </div>
+                                <div class="project-activities__slide" data-index="3">
+                                    <div class="project-activities__slide-placeholder">
+                                        <span>活動画像 4<br>800 x 600</span>
+                                    </div>
+                                </div>
+                                <div class="project-activities__slide" data-index="4">
+                                    <div class="project-activities__slide-placeholder">
+                                        <span>活動画像 5<br>800 x 600</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="project-activity__content">
+                    </div>
+                    <!-- 右: スクロールテキストエリア -->
+                    <div class="project-activities__text-col">
+                        <div class="project-activity" data-index="0">
+                            <div class="project-activity__image-sp">
+                                <div class="project-activities__slide-placeholder"><span>活動画像 1<br>800 x 600</span></div>
+                            </div>
                             <span class="project-activity__number">01</span>
                             <h3 class="project-activity__title">ユースアカデミー運営</h3>
                             <p class="project-activity__text">
@@ -125,15 +126,10 @@
                                 毎週末、地域の施設を利用して定期的なトレーニングを実施しています。
                             </p>
                         </div>
-                    </div>
-                    <!-- 活動2 -->
-                    <div class="project-activity project-activity--reverse">
-                        <div class="project-activity__image">
-                            <div class="project-activity__image-placeholder">
-                                <span>活動画像 2<br>800 x 500</span>
+                        <div class="project-activity" data-index="1">
+                            <div class="project-activity__image-sp">
+                                <div class="project-activities__slide-placeholder"><span>活動画像 2<br>800 x 600</span></div>
                             </div>
-                        </div>
-                        <div class="project-activity__content">
                             <span class="project-activity__number">02</span>
                             <h3 class="project-activity__title">地域コミュニティイベント</h3>
                             <p class="project-activity__text">
@@ -142,15 +138,10 @@
                                 世代を超えた交流の場を提供し、スポーツを通じたコミュニティの活性化を推進しています。
                             </p>
                         </div>
-                    </div>
-                    <!-- 活動3 -->
-                    <div class="project-activity">
-                        <div class="project-activity__image">
-                            <div class="project-activity__image-placeholder">
-                                <span>活動画像 3<br>800 x 500</span>
+                        <div class="project-activity" data-index="2">
+                            <div class="project-activity__image-sp">
+                                <div class="project-activities__slide-placeholder"><span>活動画像 3<br>800 x 600</span></div>
                             </div>
-                        </div>
-                        <div class="project-activity__content">
                             <span class="project-activity__number">03</span>
                             <h3 class="project-activity__title">社会貢献プログラム</h3>
                             <p class="project-activity__text">
@@ -159,34 +150,30 @@
                                 チームとして社会に還元できる活動を幅広く展開しています。
                             </p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 実績セクション -->
-        <section class="project-results section">
-            <div class="container">
-                <div class="project-results__header">
-                    <p class="project-results__en">Results</p>
-                    <h2 class="project-results__subtitle">実績・成果</h2>
-                </div>
-                <div class="project-results__grid">
-                    <div class="project-result-card">
-                        <span class="project-result-card__number">500+</span>
-                        <p class="project-result-card__label">アカデミー参加者数</p>
-                    </div>
-                    <div class="project-result-card">
-                        <span class="project-result-card__number">30+</span>
-                        <p class="project-result-card__label">年間イベント開催数</p>
-                    </div>
-                    <div class="project-result-card">
-                        <span class="project-result-card__number">10+</span>
-                        <p class="project-result-card__label">連携自治体数</p>
-                    </div>
-                    <div class="project-result-card">
-                        <span class="project-result-card__number">50+</span>
-                        <p class="project-result-card__label">パートナー企業数</p>
+                        <div class="project-activity" data-index="3">
+                            <div class="project-activity__image-sp">
+                                <div class="project-activities__slide-placeholder"><span>活動画像 4<br>800 x 600</span></div>
+                            </div>
+                            <span class="project-activity__number">04</span>
+                            <h3 class="project-activity__title">健康増進プロジェクト</h3>
+                            <p class="project-activity__text">
+                                地域住民の健康づくりを支援するプログラムを実施。
+                                フィットネス教室や健康セミナーの開催を通じて、
+                                スポーツを日常に取り入れるきっかけを提供しています。
+                            </p>
+                        </div>
+                        <div class="project-activity" data-index="4">
+                            <div class="project-activity__image-sp">
+                                <div class="project-activities__slide-placeholder"><span>活動画像 5<br>800 x 600</span></div>
+                            </div>
+                            <span class="project-activity__number">05</span>
+                            <h3 class="project-activity__title">スポーツ施設の整備・開放</h3>
+                            <p class="project-activity__text">
+                                地域のスポーツ環境を向上させるため、施設の整備や一般開放を推進。
+                                誰もがスポーツを楽しめる環境づくりに取り組み、
+                                地域全体のスポーツ参加率の向上を目指しています。
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
