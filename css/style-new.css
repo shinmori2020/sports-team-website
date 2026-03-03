@@ -1758,6 +1758,238 @@ input, select, textarea {
 }
 
 /* =============================================
+   Members List Page
+   ============================================= */
+.members-list__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.member-card {
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.member-card__link {
+    display: block;
+    position: relative;
+}
+
+.member-card__placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+    transition: transform var(--transition-slow);
+}
+
+.member-card:hover .member-card__placeholder {
+    transform: scale(1.05);
+}
+
+.member-card__placeholder svg {
+    opacity: 0.5;
+}
+
+.member-card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.member-card:hover .member-card__overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.member-card__role {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--color-accent-light);
+    margin-bottom: 6px;
+}
+
+.member-card__name {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-white);
+}
+
+/* =============================================
+   Member Detail Page
+   ============================================= */
+.page-hero--compact {
+    min-height: 28vh;
+}
+
+.member-detail__breadcrumb {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 48px;
+}
+
+.member-detail__breadcrumb a {
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.member-detail__breadcrumb a:hover {
+    color: var(--color-accent-light);
+}
+
+.member-detail__breadcrumb-sep {
+    margin: 0 12px;
+}
+
+.member-detail__grid {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.member-detail__photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+    border-radius: 2px;
+}
+
+.member-detail__photo-placeholder svg {
+    opacity: 0.4;
+}
+
+.member-detail__role {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--color-accent-light);
+    margin-bottom: 16px;
+}
+
+.member-detail__name {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.member-detail__name-en {
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+}
+
+.member-detail__profile {
+    margin-bottom: 40px;
+}
+
+.member-detail__profile-heading {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--color-text-secondary);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.member-detail__profile-text {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 2;
+    color: var(--color-text-secondary);
+    margin-bottom: 16px;
+}
+
+.member-detail__profile-text:last-child {
+    margin-bottom: 0;
+}
+
+.member-detail__sns-heading {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--color-text-secondary);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.member-detail__sns-links {
+    display: flex;
+    gap: 16px;
+}
+
+.member-detail__sns-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+}
+
+.member-detail__sns-link:hover {
+    color: var(--color-text);
+    background: var(--color-bg-card-hover);
+    border-color: var(--color-border-hover);
+}
+
+.member-detail__back {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+}
+
+.member-detail__back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.member-detail__back-link:hover {
+    color: var(--color-accent-light);
+}
+
+/* =============================================
    Responsive
    ============================================= */
 
@@ -1832,6 +2064,17 @@ input, select, textarea {
     /* Partners page - Tablet */
     .partners-rank__grid--bronze {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Members page - Tablet */
+    .members-list__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    /* Member Detail - Tablet */
+    .member-detail__grid {
+        gap: 40px;
     }
 }
 
@@ -2076,6 +2319,44 @@ input, select, textarea {
     .partners-cta__inner {
         padding: 48px 24px;
     }
+
+    /* Members page - Mobile */
+    .members-list__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .member-card__overlay {
+        opacity: 1;
+        transform: translateY(0);
+        padding: 16px 14px;
+    }
+
+    .member-card__name {
+        font-size: 0.875rem;
+    }
+
+    .member-card__role {
+        font-size: 0.625rem;
+    }
+
+    /* Member Detail - Mobile */
+    .page-hero--compact {
+        min-height: 20vh;
+    }
+
+    .member-detail__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .member-detail__photo {
+        max-width: 400px;
+    }
+
+    .member-detail__back {
+        margin-top: 48px;
+    }
 }
 
 /* Small Mobile */
@@ -2097,4 +2378,9 @@ input, select, textarea {
         padding-right: 0;
     }
 
+    /* Members page - Small Mobile */
+    .members-list__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
 }

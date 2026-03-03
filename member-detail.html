@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="メンバー詳細情報">
-    <title>山田 太郎 | メンバー紹介 | サイト名</title>
+    <meta name="description" content="メンバー詳細 - スポーツチーム公式サイト">
+    <title>サイト名 | 山田 太郎</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-new.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -16,28 +16,24 @@
     <header class="header">
         <div class="header__inner">
             <div class="header__logo">
-                <a href="index.html">LOGO</a>
+                <a href="index-new.html">LOGO</a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="index.html">トップ</a></li>
+                    <li class="header__nav-item"><a href="index-new.html">トップ</a></li>
                     <li class="header__nav-item"><a href="company.html">会社説明</a></li>
                     <li class="header__nav-item"><a href="members.html">メンバー紹介</a></li>
                     <li class="header__nav-item"><a href="project.html">プロジェクト</a></li>
                     <li class="header__nav-item"><a href="partners.html">パートナーズ</a></li>
                 </ul>
             </nav>
-            <div class="header__cta">
-                <a href="index.html#contact" class="btn btn--primary">
-                    <i class="fa-regular fa-envelope"></i>
-                    お問い合わせ
-                </a>
+            <div class="header__actions">
+                <button class="hamburger" type="button" aria-label="メニューを開く">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <button class="hamburger" type="button" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
 
@@ -47,115 +43,93 @@
     <!-- モバイルナビゲーション -->
     <nav class="mobile-nav">
         <ul class="mobile-nav__list">
-            <li class="mobile-nav__item"><a href="index.html">トップ</a></li>
+            <li class="mobile-nav__item"><a href="index-new.html">トップ</a></li>
             <li class="mobile-nav__item"><a href="company.html">会社説明</a></li>
             <li class="mobile-nav__item"><a href="members.html">メンバー紹介</a></li>
             <li class="mobile-nav__item"><a href="project.html">プロジェクト</a></li>
             <li class="mobile-nav__item"><a href="partners.html">パートナーズ</a></li>
         </ul>
         <div class="mobile-nav__cta">
-            <a href="index.html#contact" class="btn btn--primary">
-                <i class="fa-regular fa-envelope"></i>
-                お問い合わせ
-            </a>
+            <a href="index-new.html#contact" class="mobile-nav__contact-link">お問い合わせ</a>
         </div>
     </nav>
 
-    <!-- ページヘッダー -->
-    <section class="page-header">
-        <div class="container">
-            <div class="page-header__content">
-                <p class="page-header__label"><span class="page-header__label-dot"></span>Member</p>
-                <h1 class="page-header__title">メンバー詳細</h1>
-                <nav class="page-header__breadcrumb">
-                    <a href="members.html">メンバー一覧</a> <span>&gt;</span> <span>山田 太郎</span>
-                </nav>
+    <!-- ページヒーロー -->
+    <section class="page-hero page-hero--compact">
+        <div class="page-hero__bg">
+            <div class="page-hero__bg-image">
+                <div class="page-hero__bg-placeholder">
+                    <span>ヒーロー背景画像<br>1920 x 400</span>
+                </div>
             </div>
         </div>
-        <div class="page-header__bg"></div>
+        <div class="container">
+            <p class="page-hero__en">Member</p>
+            <h1 class="page-hero__title">メンバー詳細</h1>
+        </div>
     </section>
 
     <!-- メインコンテンツ -->
     <main>
-        <!-- メンバー詳細 -->
         <section class="member-detail section">
             <div class="container">
-                <div class="member-detail__inner">
-                    <div class="member-detail__image">
-                        <div class="member-detail__image-placeholder">
-                            <svg class="placeholder-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <circle cx="12" cy="8" r="4"></circle>
-                                <path d="M20 21a8 8 0 1 0-16 0"></path>
-                            </svg>
-                            <span>メンバー写真<br>400 x 500</span>
+                <!-- パンくずリスト -->
+                <nav class="member-detail__breadcrumb">
+                    <a href="members.html">メンバー紹介</a>
+                    <span class="member-detail__breadcrumb-sep">/</span>
+                    <span>山田 太郎</span>
+                </nav>
+
+                <div class="member-detail__grid">
+                    <!-- 左: メンバー写真 -->
+                    <div class="member-detail__photo">
+                        <div class="member-detail__photo-placeholder">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"></circle><path d="M20 21a8 8 0 1 0-16 0"></path></svg>
+                            <span>800 x 1000</span>
                         </div>
                     </div>
-                    <div class="member-detail__content">
-                        <p class="member-detail__position">代表 / キャプテン</p>
+
+                    <!-- 右: メンバー情報 -->
+                    <div class="member-detail__info">
+                        <p class="member-detail__role">代表 / キャプテン</p>
                         <h2 class="member-detail__name">山田 太郎</h2>
                         <p class="member-detail__name-en">Taro Yamada</p>
 
-                        <div class="member-detail__info">
-                            <table class="member-detail__table">
-                                <tr>
-                                    <th>生年月日</th>
-                                    <td>1995年4月1日</td>
-                                </tr>
-                                <tr>
-                                    <th>出身地</th>
-                                    <td>東京都</td>
-                                </tr>
-                                <tr>
-                                    <th>身長 / 体重</th>
-                                    <td>175cm / 70kg</td>
-                                </tr>
-                                <tr>
-                                    <th>経歴</th>
-                                    <td>〇〇高校 → △△大学 → 現チーム</td>
-                                </tr>
-                            </table>
-                        </div>
-
                         <div class="member-detail__profile">
-                            <h3 class="member-detail__profile-title">プロフィール</h3>
+                            <h3 class="member-detail__profile-heading">プロフィール</h3>
                             <p class="member-detail__profile-text">
-                                チーム創設時からのメンバーとして活躍。リーダーシップと技術力でチームを牽引している。地域の子どもたちへのスポーツ指導にも積極的に参加し、次世代の育成にも力を入れている。
+                                ここにプロフィール文が入ります。メンバーの経歴や、チームへの想い、
+                                目標などを記載します。WordPressのカスタム投稿タイプで管理されるため、
+                                管理画面から自由に編集が可能です。
                             </p>
                             <p class="member-detail__profile-text">
-                                「スポーツを通じて地域に貢献し、たくさんの人々に感動を届けたい」という想いで日々練習に励んでいる。
+                                2行目のプロフィール文です。必要に応じて段落を分けて記載できます。
+                                スポーツへの情熱や今後の抱負などを記載します。
                             </p>
                         </div>
 
                         <div class="member-detail__sns">
-                            <h3 class="member-detail__sns-title">SNS</h3>
+                            <h3 class="member-detail__sns-heading">SNS</h3>
                             <div class="member-detail__sns-links">
+                                <a href="#" class="member-detail__sns-link" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
                                 <a href="#" class="member-detail__sns-link" aria-label="X(Twitter)">
                                     <i class="fa-brands fa-x-twitter"></i>
                                 </a>
-                                <a href="#" class="member-detail__sns-link" aria-label="Instagram">
-                                    <i class="fa-brands fa-instagram"></i>
+                                <a href="#" class="member-detail__sns-link" aria-label="YouTube">
+                                    <i class="fa-brands fa-youtube"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- 一覧へ戻る -->
                 <div class="member-detail__back">
-                    <a href="members.html" class="member-detail__back-btn">
-                        <i class="fa-solid fa-arrow-left"></i> メンバー一覧に戻る
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- お問い合わせCTA -->
-        <section class="cta section section--primary">
-            <div class="container">
-                <div class="cta__inner">
-                    <h2 class="cta__title">お問い合わせはこちら</h2>
-                    <p class="cta__description">チームへのご質問・ご相談はお気軽にどうぞ。</p>
-                    <a href="index.html#contact" class="cta__btn">
-                        お問い合わせ <i class="fa-solid fa-arrow-right"></i>
+                    <a href="members.html" class="member-detail__back-link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        メンバー一覧へ戻る
                     </a>
                 </div>
             </div>
@@ -164,57 +138,28 @@
 
     <!-- フッター -->
     <footer class="footer">
-        <div class="footer__main">
-            <div class="container">
-                <div class="footer__inner">
-                    <div class="footer__logo-area">
-                        <div class="footer__logo">
-                            <a href="index.html">LOGO</a>
-                        </div>
-                        <div class="footer__info">
-                            <p class="footer__address">〒000-0000<br>東京都〇〇区〇〇 0-0-0</p>
-                            <p class="footer__tel"><i class="fa-solid fa-phone"></i> 00-0000-0000</p>
-                        </div>
-                        <div class="footer__sns">
-                            <a href="#" class="footer__sns-link" aria-label="X(Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#" class="footer__sns-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="footer__sns-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" class="footer__sns-link" aria-label="LINE"><i class="fa-brands fa-line"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer__nav">
-                        <div class="footer__nav-column">
-                            <h4 class="footer__nav-title">メニュー</h4>
-                            <ul class="footer__nav-list">
-                                <li><a href="index.html">トップ</a></li>
-                                <li><a href="company.html">会社説明</a></li>
-                                <li><a href="members.html">メンバー紹介</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__nav-column">
-                            <h4 class="footer__nav-title">コンテンツ</h4>
-                            <ul class="footer__nav-list">
-                                <li><a href="project.html">プロジェクト</a></li>
-                                <li><a href="partners.html">パートナーズ</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__nav-column">
-                            <h4 class="footer__nav-title">お問い合わせ</h4>
-                            <ul class="footer__nav-list">
-                                <li><a href="index.html#contact">お問い合わせフォーム</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="footer__bottom">
             <div class="container">
-                <p class="footer__copyright">&copy; 2026 サイト名｜<a href="#">プライバシーポリシー</a></p>
+                <div class="footer__bottom-sns">
+                    <span class="footer__bottom-sns-label">公式SNSアカウント</span>
+                    <div class="footer__bottom-sns-links">
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="X(Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer__bottom-bar">
+                    <div class="footer__bottom-links">
+                        <a href="#">ご利用条件</a>
+                        <a href="#">プライバシーポリシー</a>
+                        <a href="#">このサイトについて</a>
+                    </div>
+                    <p class="footer__copyright">&copy; 2026 サイト名</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main-new.js"></script>
 </body>
 </html>
