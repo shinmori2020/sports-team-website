@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
        スクロールアニメーション（コンテンツセクション）
        ----------------------------------------- */
     var fadeTargets = document.querySelectorAll(
-        '.mission__content, .news__title, .news__content, .members__header, .members__slider, .contact__header, .contact__form, .company-vision__header, .company-vision__grid, .company-business__header, .company-business__grid, .company-info__header, .company-table, .project-activities__header, .project-activities__sticky-wrap, .partners-intro__content, .partners-rank__header, .partners-rank__grid, .partners-cta__inner, .members-list__grid .member-card, .member-detail__breadcrumb, .member-detail__grid, .member-detail__back'
+        '.mission__content, .news__title, .news__content, .members__header, .members__slider, .contact__header, .contact__form, .company-vision__header, .company-vision__grid, .company-business__header, .company-business__grid, .company-info__header, .company-table, .company-access__header, .company-access__map, .project-activities__header, .project-activities__sticky-wrap, .partners-intro__content, .partners-rank__header, .partners-rank__grid, .partners-cta__inner, .members-list__grid .member-card, .member-detail__breadcrumb, .member-detail__grid, .member-detail__back'
     );
 
     fadeTargets.forEach(function (el) {
