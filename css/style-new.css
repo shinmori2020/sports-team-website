@@ -167,10 +167,14 @@ input, select, textarea {
 }
 
 .header__logo a {
-    font-size: 1.5rem;
-    font-weight: 900;
-    letter-spacing: 0.12em;
-    color: var(--color-white);
+    display: flex;
+    align-items: center;
+}
+
+.header__logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .header__nav {
